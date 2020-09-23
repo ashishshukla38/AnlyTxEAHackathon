@@ -17,7 +17,7 @@
     }
   ],
   "releaseInfo" : {
-    "templateVersion" : "1.1",
+    "templateVersion" : "1.2",
     "notesFile" : "releaseNotes.html"
   },
   "folderDefinition" : "folder.json",
@@ -37,10 +37,10 @@
       "file" : "dashboards/Covid_Impact_Service.json"
     },
     {
-      "label" : "COVID19 Impact - Sales",
-      "name" : "Copy_of_Covid_Impact_Sales_tp",
+      "label" : "COVID19 - Impact on Sales",
+      "name" : "COVID19_Impact_on_Sales_tp",
       "condition" : "${Variables.Overrides.createAllDashboards}",
-      "file" : "dashboards/Copy_of_Covid_Impact_Sales.json"
+      "file" : "dashboards/COVID19_Impact_on_Sales.json"
     }
   ],
   "eltDataflows" : [ ],

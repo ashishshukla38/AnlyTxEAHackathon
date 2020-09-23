@@ -1,6 +1,6 @@
 {
-  "name" : "Copy_of_Covid_Impact_Sales_tp",
-  "label" : "COVID19 Impact - Sales",
+  "name" : "COVID19_Impact_on_Sales_tp",
+  "label" : "COVID19 - Impact on Sales",
   "folder" : {
     "id" : "${App.Folder.Id}"
   },
