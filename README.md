@@ -71,3 +71,33 @@ sfdx analytics:app:list
 
 2. Use the Folder ID from the App, where Template Source ID is not null.
 sfdx analytics:template:update -f 00l9D000000IFuhQAG  --templatename AnlyTx_COVID19_Impact_Analysis  
+
+3. Make sure your template-info.json file has 
+```json
+"templateType": "embeddedapp",
+```
+4. Add, if it is removed after package update.
+```json
+"autoInstallDefinition": "auto-install.json",
+```
+
+5. Make sure you have a file called auto-install.json after updating the template. If not you can create with below content.
+
+```json
+{
+  "hooks": [
+    {
+      "type": "PackageInstall",
+      "requestName": "Installing/Upgrading AnlyTx App"
+    }
+  ],
+  "configuration": {
+    "appConfiguration": {
+      "autoShareWithLicensedUsers": true,
+      "autoShareWithOriginator": true,
+      "deleteAppOnConstructionFailure": true,
+      "values": {}
+    }
+  }
+}
+ ```
