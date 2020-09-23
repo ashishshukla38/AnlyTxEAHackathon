@@ -3,7 +3,6 @@
   "label" : "AnlyTx - COVID19 Impact Analysis",
   "name" : "AnlyTx_COVID19_Impact_Analysis",
   "namespace" : "AnlyTxHack",
-  "description" : "",
   "assetVersion" : 50.0,
   "variableDefinition" : "variables.json",
   "uiDefinition" : "ui.json",
@@ -18,7 +17,7 @@
     }
   ],
   "releaseInfo" : {
-    "templateVersion" : "1.0",
+    "templateVersion" : "1.1",
     "notesFile" : "releaseNotes.html"
   },
   "folderDefinition" : "folder.json",
@@ -36,6 +35,12 @@
       "name" : "Covid_Impact_Service_tp",
       "condition" : "${Variables.Overrides.createAllDashboards}",
       "file" : "dashboards/Covid_Impact_Service.json"
+    },
+    {
+      "label" : "COVID19 Impact - Sales",
+      "name" : "Copy_of_Covid_Impact_Sales_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/Copy_of_Covid_Impact_Sales.json"
     }
   ],
   "eltDataflows" : [ ],
@@ -52,6 +57,16 @@
       "name" : "Logo_AnlyTxpng",
       "condition" : "${Variables.Overrides.createAllImages}",
       "file" : "images/Logo_AnlyTx.png"
+    },
+    {
+      "name" : "banner_image_withoutlogojpg",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/banner_image_withoutlogo.jpg"
+    },
+    {
+      "name" : "banner_image_withlogsdsdojpg",
+      "condition" : "${Variables.Overrides.createAllImages}",
+      "file" : "images/banner_image_withlogsdsdo.jpg"
     }
   ],
   "extendedTypes" : { },

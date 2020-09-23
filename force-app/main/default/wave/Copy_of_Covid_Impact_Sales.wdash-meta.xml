@@ -3,4 +3,5 @@
     <content xsi:nil="true"/>
     <application>AnlyTxHack__AnlyTx_COVID19_Impact_Analysis</application>
     <masterLabel>COVID19 Impact - Sales</masterLabel>
+    <templateAssetSourceName>Copy_of_Covid_Impact_Sales_tp</templateAssetSourceName>
 </WaveDashboard>
