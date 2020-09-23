@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="developerName" type="String" access="global" default="AnlyTxHack__AnlyTx_COVID19_Impact_Analysis"/>    
+    <wave:waveDashboard developerName="{!v.developerName}" height="600"/>    
+</aura:component>
