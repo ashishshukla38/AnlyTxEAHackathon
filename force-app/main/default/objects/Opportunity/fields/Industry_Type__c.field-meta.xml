@@ -46,6 +46,11 @@
                 <default>false</default>
                 <label>Travel</label>
             </value>
+            <value>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+                <label>Health Care</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

@@ -1,6 +1,5 @@
 {
-  "templateType" : "embeddedapp",
-  "autoInstallDefinition": "auto-install.json",
+  "templateType" : "app",
   "label" : "AnlyTx - COVID19 Impact Analysis",
   "name" : "AnlyTx_COVID19_Impact_Analysis",
   "namespace" : "AnlyTxHack",

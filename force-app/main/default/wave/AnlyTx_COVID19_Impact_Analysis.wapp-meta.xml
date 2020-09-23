@@ -7,4 +7,6 @@
         <sharedTo>test-ifkupmrksbwg@example.com</sharedTo>
         <sharedToType>User</sharedToType>
     </shares>
+    <templateOrigin>AnlyTxHack__AnlyTx_COVID19_Impact_Analysis</templateOrigin>
+    <templateVersion>1.0</templateVersion>
 </WaveApplication>

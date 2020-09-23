@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Country__c</fullName>
+    <externalId>false</externalId>
+    <label>Country</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Australia</fullName>
+                <default>false</default>
+                <label>Australia</label>
+            </value>
+            <value>
+                <fullName>Austria</fullName>
+                <default>false</default>
+                <label>Austria</label>
+            </value>
+            <value>
+                <fullName>Belarus</fullName>
+                <default>false</default>
+                <label>Belarus</label>
+            </value>
+            <value>
+                <fullName>Brazil</fullName>
+                <default>false</default>
+                <label>Brazil</label>
+            </value>
+            <value>
+                <fullName>Belgium</fullName>
+                <default>false</default>
+                <label>Belgium</label>
+            </value>
+            <value>
+                <fullName>China</fullName>
+                <default>false</default>
+                <label>China</label>
+            </value>
+            <value>
+                <fullName>United Arab Emirates</fullName>
+                <default>false</default>
+                <label>United Arab Emirates</label>
+            </value>
+            <value>
+                <fullName>United States of America</fullName>
+                <default>false</default>
+                <label>United States of America</label>
+            </value>
+            <value>
+                <fullName>India</fullName>
+                <default>false</default>
+                <label>India</label>
+            </value>
+            <value>
+                <fullName>The United Kingdom</fullName>
+                <default>false</default>
+                <label>The United Kingdom</label>
+            </value>
+            <value>
+                <fullName>Russia</fullName>
+                <default>false</default>
+                <label>Russia</label>
+            </value>
+            <value>
+                <fullName>Canada</fullName>
+                <default>false</default>
+                <label>Canada</label>
+            </value>
+            <value>
+                <fullName>Israel</fullName>
+                <default>false</default>
+                <label>Israel</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -2,6 +2,5 @@
 <WaveDashboard xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <content xsi:nil="true"/>
     <application>AnlyTxHack__AnlyTx_COVID19_Impact_Analysis</application>
-    <masterLabel>Covid Impact - Sales</masterLabel>
-    <templateAssetSourceName>Covid_Impact_Sales_tp</templateAssetSourceName>
+    <masterLabel>COVID19 Impact - Sales</masterLabel>
 </WaveDashboard>
