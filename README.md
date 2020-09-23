@@ -64,10 +64,8 @@ To udpate the template with new changes use below process:
 
 1. Execute Command:
 sfdx analytics:app:list
-
-NAME                            LABEL                             FOLDERID            STATUS     TEMPLATE SOURCE ID  NAMESPACE
-──────────────────────────────  ────────────────────────────────  ──────────────────  ─────────  ──────────────────  ──────────
-AnlyTx_COVID19_Impact_Analysis  AnlyTx - COVID19 Impact Analysis  00l9D000000IFuhQAG  newstatus  0Nk9D0000004CAkSAM  AnlyTxHack
+ 
+ ![alt text](https://github.com/ashishshukla38/AnlyTxEAHackathon/blob/master/ReadMdImages/UpdateTemplateScreenshot.png?raw=true) 
 
 
 
