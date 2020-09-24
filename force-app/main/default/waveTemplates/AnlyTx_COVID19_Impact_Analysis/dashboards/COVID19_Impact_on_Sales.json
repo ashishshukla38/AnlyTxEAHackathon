@@ -86,7 +86,7 @@
                 "column" : 0,
                 "name" : "container_4",
                 "row" : 6,
-                "rowspan" : 15,
+                "rowspan" : 16,
                 "widgetStyle" : {
                   "backgroundColor" : "rgb(51, 87, 121)",
                   "borderColor" : "#E6ECF2",
@@ -190,7 +190,7 @@
                 "column" : 3,
                 "name" : "chart_1",
                 "row" : 6,
-                "rowspan" : 7,
+                "rowspan" : 8,
                 "widgetStyle" : {
                   "borderEdges" : [ ]
                 }
@@ -199,7 +199,7 @@
                 "colspan" : 8,
                 "column" : 8,
                 "name" : "chart_3",
-                "row" : 6,
+                "row" : 7,
                 "rowspan" : 7,
                 "widgetStyle" : {
                   "borderEdges" : [ ]
@@ -219,7 +219,7 @@
                 "colspan" : 7,
                 "column" : 9,
                 "name" : "chart_4",
-                "row" : 13,
+                "row" : 14,
                 "rowspan" : 8,
                 "widgetStyle" : {
                   "borderEdges" : [ ]
@@ -229,7 +229,7 @@
                 "colspan" : 6,
                 "column" : 3,
                 "name" : "chart_8",
-                "row" : 13,
+                "row" : 14,
                 "rowspan" : 8,
                 "widgetStyle" : {
                   "borderEdges" : [ ]
@@ -239,10 +239,34 @@
                 "colspan" : 16,
                 "column" : 0,
                 "name" : "table_2",
-                "row" : 21,
+                "row" : 23,
                 "rowspan" : 15,
                 "widgetStyle" : {
                   "borderEdges" : [ ]
+                }
+              },
+              {
+                "colspan" : 8,
+                "column" : 8,
+                "name" : "pillbox_5",
+                "row" : 6,
+                "rowspan" : 1,
+                "widgetStyle" : {
+                  "borderEdges" : [ ]
+                }
+              },
+              {
+                "colspan" : 16,
+                "column" : 0,
+                "name" : "text_2",
+                "row" : 22,
+                "rowspan" : 1,
+                "widgetStyle" : {
+                  "backgroundColor" : "#091A3E",
+                  "borderColor" : "#E6ECF2",
+                  "borderEdges" : [ ],
+                  "borderRadius" : 0,
+                  "borderWidth" : 1
                 }
               }
             ]
@@ -730,6 +754,11 @@
                 "AnlyTxHack__Industry_Type__c",
                 [
                   "Computer Software",
+                  "Construction",
+                  "Consumer Goods",
+                  "Entertainment",
+                  "Human Resource",
+                  "Manufacturing",
                   "Travel"
                 ],
                 "in"
@@ -781,7 +810,7 @@
               "title" : ""
             },
             "title" : {
-              "fontSize" : 14,
+              "fontSize" : 24,
               "subtitleFontSize" : 14,
               "label" : "Impact of Covid19 on Opportunties by Industry Type",
               "align" : "center",
@@ -2688,8 +2717,9 @@
             "dimensions" : ""
           },
           "visualizationType" : "hbar",
+          "exploreLink" : true,
           "title" : {
-            "fontSize" : 32,
+            "fontSize" : 24,
             "subtitleFontSize" : 11,
             "label" : "Top 10 Won Opportunities by Industry",
             "align" : "center",
@@ -2758,6 +2788,18 @@
         },
         "type" : "chart"
       },
+      "text_2" : {
+        "parameters" : {
+          "content" : {
+            "displayTemplate" : "Summary of Opportunity By country, Stages and Industry"
+          },
+          "fontSize" : 32,
+          "showActionMenu" : true,
+          "textAlignment" : "center",
+          "textColor" : "#FFFFFF"
+        },
+        "type" : "text"
+      },
       "chart_8" : {
         "parameters" : {
           "autoFitMode" : "keepLabels",
@@ -2809,7 +2851,7 @@
           },
           "exploreLink" : true,
           "title" : {
-            "fontSize" : 14,
+            "fontSize" : 24,
             "subtitleFontSize" : 11,
             "label" : "Covid Cases Across the Month",
             "align" : "center",
@@ -2925,7 +2967,7 @@
           "visualizationType" : "hbar",
           "exploreLink" : true,
           "title" : {
-            "fontSize" : 32,
+            "fontSize" : 24,
             "subtitleFontSize" : 11,
             "label" : "Top 10 Close Lost Opportunities By Industry ",
             "align" : "center",
@@ -3018,7 +3060,7 @@
           },
           "legend" : {
             "descOrder" : false,
-            "showHeader" : true,
+            "showHeader" : false,
             "show" : true,
             "customSize" : "auto",
             "position" : "right-top",
@@ -3041,7 +3083,7 @@
           "visualizationType" : "choropleth",
           "exploreLink" : true,
           "title" : {
-            "fontSize" : 14,
+            "fontSize" : 24,
             "subtitleFontSize" : 11,
             "label" : "Covid19 Cases World Wide",
             "align" : "center",
@@ -3114,7 +3156,7 @@
           "visualizationType" : "treemap",
           "exploreLink" : true,
           "title" : {
-            "fontSize" : 14,
+            "fontSize" : 24,
             "subtitleFontSize" : 11,
             "label" : "Expected Revenue By Industry Type",
             "align" : "center",
@@ -3184,7 +3226,7 @@
           },
           "exploreLink" : true,
           "title" : {
-            "fontSize" : 14,
+            "fontSize" : 24,
             "subtitleFontSize" : 14,
             "label" : "Impact of Covid19 on Opportunties by Industry Type",
             "align" : "center",
@@ -3437,6 +3479,27 @@
           "showActionMenu" : true,
           "step" : "AnlyTxHack__Country__3",
           "textColor" : "rgb(51, 87, 121)"
+        },
+        "type" : "pillbox"
+      },
+      "pillbox_5" : {
+        "parameters" : {
+          "compact" : false,
+          "exploreLink" : false,
+          "fontSize" : 14,
+          "measureField" : "sum_ExpectedRevenue",
+          "selectedTab" : {
+            "backgroundColor" : "#0070D2",
+            "borderColor" : "#C6D3E1",
+            "borderEdges" : [
+              "all"
+            ],
+            "borderWidth" : 1,
+            "textColor" : "#FFFFFF"
+          },
+          "showActionMenu" : true,
+          "step" : "AnlyTxHack__Industry_2",
+          "textColor" : "#0070D2"
         },
         "type" : "pillbox"
       }

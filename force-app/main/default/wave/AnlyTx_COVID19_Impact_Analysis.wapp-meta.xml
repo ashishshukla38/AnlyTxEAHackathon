@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folder>AnlyTxHack__AnlyTx_COVID19_Impact_Analysis</folder>
+    <masterLabel>AnlyTx - COVID19 Impact Analysis</masterLabel>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>test-ifkupmrksbwg@example.com</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+    <templateOrigin>AnlyTxHack__AnlyTx_COVID19_Impact_Analysis</templateOrigin>
+    <templateVersion>1.4</templateVersion>
+</WaveApplication>

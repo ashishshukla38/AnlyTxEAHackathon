@@ -45,28 +45,45 @@
 		<members>*</members>
 		<name>WaveDataset</name>
 	</types>-->
-	 <types>
+	<types>
 		<members>*</members>
 		<name>WaveTemplateBundle</name>
 	</types> 
-	<types>
+	<!--<types>
 		<members>*</members>
 		<name>ContentAsset</name>
-	</types>
-	<types>
+	</types>-->
+	<!--<types>
 		<members>AnlyTx_App</members>
 		<name>CustomApplication</name>
-	</types>
+	</types>-->
 	<types>
 		<members>Case.EstimatedClosedDate__c</members>
 		<members>Case.Industry_Type__c</members>
 		<members>Opportunity.Industry_Type__c</members>
 		<name>CustomField</name>
 	</types>
-	<types>
+	<!--<types>
 		<members>*</members>
 		<name>FlexiPage</name>
+	</types>-->
+	<!--<types>
+		<members>Sales_Impacts</members>
+		<members>Service_Impacts</members>
+		<name>CustomTab</name>
+	</types>-->
+<!--	<types>
+		<members>*</members>
+		<name>WaveApplication</name>
 	</types>
+	<types>
+		<members>*</members>
+		<name>WaveDashboard</name>
+	</types>
+	<types>
+		<members>*</members>
+		<name>WaveXmd</name>
+	</types>-->
     <!--<types>		 
 		<members>Covid19WHOStats__c</members>
 		<name>CustomObject</name>

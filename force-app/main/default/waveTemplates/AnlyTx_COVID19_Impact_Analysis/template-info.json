@@ -18,25 +18,13 @@
     }
   ],
   "releaseInfo" : {
-    "templateVersion" : "1.3",
+    "templateVersion" : "1.4",
     "notesFile" : "releaseNotes.html"
   },
   "folderDefinition" : "folder.json",
   "externalFiles" : [ ],
   "lenses" : [ ],
   "dashboards" : [
-    {
-      "label" : "Covid Impact - Sales",
-      "name" : "Covid_Impact_Sales_tp",
-      "condition" : "${Variables.Overrides.createAllDashboards}",
-      "file" : "dashboards/Covid_Impact_Sales.json"
-    },
-    {
-      "label" : "Covid Impact - Service",
-      "name" : "Covid_Impact_Service_tp",
-      "condition" : "${Variables.Overrides.createAllDashboards}",
-      "file" : "dashboards/Covid_Impact_Service.json"
-    },
     {
       "label" : "COVID19 - Impact on Sales",
       "name" : "COVID19_Impact_on_Sales_tp",

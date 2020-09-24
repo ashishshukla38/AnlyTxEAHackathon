@@ -48,6 +48,38 @@
         ],
         "label" : "Date Connection",
         "name" : "Link_1078"
+      },
+      {
+        "fields" : [
+          {
+            "dataSourceName" : "Case",
+            "dataSourceType" : "sobject",
+            "fieldName" : "AnlyTxHack__EstimatedClosedDate__c"
+          },
+          {
+            "dataSourceName" : "AnlyTxHack__Covid19WHOStats__c",
+            "dataSourceType" : "sobject",
+            "fieldName" : "AnlyTxHack__Date_Reported__c"
+          }
+        ],
+        "label" : "Cases Connected with COVID19 Cases",
+        "name" : "Link_2482"
+      },
+      {
+        "fields" : [
+          {
+            "dataSourceName" : "Case",
+            "dataSourceType" : "sobject",
+            "fieldName" : "AnlyTxHack__Country__c"
+          },
+          {
+            "dataSourceName" : "AnlyTxHack__Covid19WHOStats__c",
+            "dataSourceType" : "sobject",
+            "fieldName" : "AnlyTxHack__Country__c"
+          }
+        ],
+        "label" : "Case Country and Covid Country",
+        "name" : "Link_3877"
       }
     ],
     "filters" : [ ],
@@ -95,8 +127,8 @@
                 "colspan" : 16,
                 "column" : 0,
                 "name" : "chart_1",
-                "row" : 6,
-                "rowspan" : 7,
+                "row" : 16,
+                "rowspan" : 10,
                 "widgetStyle" : {
                   "backgroundColor" : "rgb(9, 26, 62)",
                   "borderColor" : "#E6ECF2",
@@ -106,21 +138,11 @@
                 }
               },
               {
-                "colspan" : 16,
+                "colspan" : 8,
                 "column" : 0,
-                "name" : "pillbox_2",
-                "row" : 5,
-                "rowspan" : 1,
-                "widgetStyle" : {
-                  "borderEdges" : [ ]
-                }
-              },
-              {
-                "colspan" : 9,
-                "column" : 0,
-                "name" : "chart_3",
-                "row" : 13,
-                "rowspan" : 7,
+                "name" : "chart_2",
+                "row" : 7,
+                "rowspan" : 9,
                 "widgetStyle" : {
                   "backgroundColor" : "#091A3E",
                   "borderColor" : "#E6ECF2",
@@ -128,39 +150,50 @@
                   "borderRadius" : 0,
                   "borderWidth" : 1
                 }
-              }
-            ]
-          },
-          {
-            "label" : "Service Insights",
-            "name" : "ca7b1ec6-4e25-4752-a15f-4676b75d22cd",
-            "navigationHidden" : false,
-            "widgets" : [
-              {
-                "colspan" : 16,
-                "column" : 0,
-                "name" : "container_7",
-                "row" : 0,
-                "rowspan" : 4,
-                "widgetStyle" : {
-                  "borderEdges" : [ ]
-                }
               },
               {
-                "colspan" : 12,
-                "column" : 2,
-                "name" : "image_9",
-                "row" : 1,
-                "rowspan" : 2,
+                "colspan" : 8,
+                "column" : 8,
+                "name" : "chart_4",
+                "row" : 7,
+                "rowspan" : 9,
                 "widgetStyle" : {
-                  "borderEdges" : [ ]
+                  "backgroundColor" : "#091A3E",
+                  "borderColor" : "#335779",
+                  "borderEdges" : [ ],
+                  "borderRadius" : 0,
+                  "borderWidth" : 1
                 }
               },
               {
                 "colspan" : 16,
                 "column" : 0,
-                "name" : "navigation_1",
-                "row" : 4,
+                "name" : "chart_9",
+                "row" : 26,
+                "rowspan" : 10,
+                "widgetStyle" : {
+                  "backgroundColor" : "#091A3E",
+                  "borderColor" : "#E6ECF2",
+                  "borderEdges" : [ ],
+                  "borderRadius" : 0,
+                  "borderWidth" : 1
+                }
+              },
+              {
+                "colspan" : 16,
+                "column" : 0,
+                "name" : "pillbox_5",
+                "row" : 5,
+                "rowspan" : 1,
+                "widgetStyle" : {
+                  "borderEdges" : [ ]
+                }
+              },
+              {
+                "colspan" : 16,
+                "column" : 0,
+                "name" : "pillbox_1",
+                "row" : 6,
                 "rowspan" : 1,
                 "widgetStyle" : {
                   "borderEdges" : [ ]
@@ -185,11 +218,11 @@
     ],
     "layouts" : [ ],
     "steps" : {
-      "Priority_Origin_1" : {
+      "CaseCountries_2" : {
         "broadcastFacet" : true,
         "datasets" : [ ],
         "isGlobal" : false,
-        "label" : "Priority_Origin",
+        "label" : "CaseCountries",
         "query" : {
           "query" : {
             "measures" : [
@@ -199,16 +232,7 @@
               ]
             ],
             "groups" : [
-              "Priority",
-              "Origin"
-            ],
-            "order" : [
-              [
-                "count",
-                {
-                  "ascending" : true
-                }
-              ]
+              "AnlyTxHack__Country__c"
             ]
           },
           "version" : -1.0
@@ -287,8 +311,145 @@
             "columnMap" : {
               "trellis" : [ ],
               "dimensionAxis" : [
-                "Priority",
-                "Origin"
+                "AnlyTxHack__Country__c"
+              ],
+              "plots" : [
+                "count"
+              ]
+            },
+            "showActionMenu" : true,
+            "measureAxis2" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "measureAxis1" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "theme" : "wave",
+            "dimensionAxis" : {
+              "showTitle" : true,
+              "customSize" : "auto",
+              "showAxis" : true,
+              "title" : "",
+              "icons" : {
+                "useIcons" : false,
+                "iconProps" : {
+                  "fit" : "cover",
+                  "column" : "",
+                  "type" : "round"
+                }
+              }
+            },
+            "applyConditionalFormatting" : true
+          },
+          "type" : "chart"
+        }
+      },
+      "CaseCountries_1" : {
+        "broadcastFacet" : true,
+        "datasets" : [ ],
+        "isGlobal" : false,
+        "label" : "CaseCountries",
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "count",
+                "*"
+              ]
+            ],
+            "groups" : [
+              "AnlyTxHack__Country__c"
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "sobject" : "Case",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "autoFitMode" : "keepLabels",
+            "showValues" : true,
+            "bins" : {
+              "breakpoints" : {
+                "high" : 100,
+                "low" : 0
+              },
+              "bands" : {
+                "high" : {
+                  "color" : "#008000",
+                  "label" : ""
+                },
+                "low" : {
+                  "color" : "#B22222",
+                  "label" : ""
+                },
+                "medium" : {
+                  "color" : "#ffa500",
+                  "label" : ""
+                }
+              }
+            },
+            "legend" : {
+              "descOrder" : false,
+              "showHeader" : true,
+              "show" : true,
+              "customSize" : "auto",
+              "position" : "right-top",
+              "inside" : false
+            },
+            "axisMode" : "multi",
+            "tooltip" : {
+              "showBinLabel" : true,
+              "measures" : "",
+              "showNullValues" : true,
+              "showPercentage" : true,
+              "showDimensions" : true,
+              "showMeasures" : true,
+              "customizeTooltip" : false,
+              "dimensions" : ""
+            },
+            "visualizationType" : "hbar",
+            "title" : {
+              "fontSize" : 14,
+              "subtitleFontSize" : 11,
+              "label" : "",
+              "align" : "center",
+              "subtitleLabel" : ""
+            },
+            "binValues" : false,
+            "trellis" : {
+              "flipLabels" : false,
+              "showGridLines" : true,
+              "size" : [
+                100,
+                100
+              ],
+              "enable" : false,
+              "type" : "x",
+              "chartsPerLine" : 4
+            },
+            "columnMap" : {
+              "trellis" : [ ],
+              "dimensionAxis" : [
+                "AnlyTxHack__Country__c"
               ],
               "plots" : [
                 "count"
@@ -393,7 +554,7 @@
             "missingValue" : "connect",
             "showValuesOnLine" : false,
             "title" : {
-              "fontSize" : 14,
+              "fontSize" : 16,
               "subtitleFontSize" : 11,
               "label" : "Number of Cases Against Average CSAT",
               "align" : "center",
@@ -460,7 +621,7 @@
           "type" : "chart"
         }
       },
-      "AnlyTxHack__Date_Rep_1" : {
+      "AnlyTxHack__Industry_3" : {
         "broadcastFacet" : true,
         "datasets" : [ ],
         "isGlobal" : false,
@@ -473,7 +634,7 @@
               ]
             ],
             "groups" : [
-              "AnlyTxHack__Date_Reported__c"
+              "AnlyTxHack__Industry_Type__c"
             ]
           },
           "version" : -1.0
@@ -483,32 +644,7 @@
           "steps" : [ ]
         },
         "selectMode" : "single",
-        "sobject" : "AnlyTxHack__Covid19WHOStats__c",
-        "type" : "aggregateflex",
-        "useGlobal" : true,
-        "visualizationParameters" : { }
-      },
-      "ExpectedRevenue_1" : {
-        "broadcastFacet" : true,
-        "datasets" : [ ],
-        "isGlobal" : false,
-        "query" : {
-          "query" : {
-            "measures" : [
-              [
-                "sum",
-                "ExpectedRevenue"
-              ]
-            ]
-          },
-          "version" : -1.0
-        },
-        "receiveFacetSource" : {
-          "mode" : "all",
-          "steps" : [ ]
-        },
-        "selectMode" : "single",
-        "sobject" : "Opportunity",
+        "sobject" : "Case",
         "type" : "aggregateflex",
         "useGlobal" : true,
         "visualizationParameters" : {
@@ -576,9 +712,11 @@
             },
             "columnMap" : {
               "trellis" : [ ],
-              "dimensionAxis" : [ ],
+              "dimensionAxis" : [
+                "AnlyTxHack__Industry_Type__c"
+              ],
               "plots" : [
-                "sum_ExpectedRevenue"
+                "count"
               ]
             },
             "showActionMenu" : true,
@@ -619,6 +757,304 @@
           },
           "type" : "chart"
         }
+      },
+      "month_AnlyTxHack__Es_2" : {
+        "broadcastFacet" : true,
+        "datasets" : [ ],
+        "isGlobal" : false,
+        "label" : "month_AnlyTxHack__Es_2",
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "count",
+                "*"
+              ]
+            ],
+            "groups" : [
+              [
+                "month",
+                "AnlyTxHack__EstimatedClosedDate__c"
+              ],
+              "AnlyTxHack__Industry_Type__c"
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "sobject" : "Case",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "autoFitMode" : "keepLabels",
+            "showPoints" : false,
+            "legend" : {
+              "descOrder" : false,
+              "showHeader" : false,
+              "show" : true,
+              "customSize" : "auto",
+              "position" : "bottom-center",
+              "inside" : false
+            },
+            "axisMode" : "multi",
+            "tooltip" : {
+              "showBinLabel" : true,
+              "measures" : "",
+              "showNullValues" : true,
+              "showPercentage" : true,
+              "showDimensions" : true,
+              "showMeasures" : true,
+              "customizeTooltip" : false,
+              "dimensions" : ""
+            },
+            "visualizationType" : "time",
+            "missingValue" : "connect",
+            "dashLine" : {
+              "measures" : "",
+              "showDashLine" : false
+            },
+            "timeAxis" : {
+              "showTitle" : false,
+              "showAxis" : true,
+              "title" : ""
+            },
+            "title" : {
+              "fontSize" : 24,
+              "subtitleFontSize" : 11,
+              "label" : "Number of Salesforce Support Cases by Month/Industry",
+              "align" : "center",
+              "subtitleLabel" : ""
+            },
+            "trellis" : {
+              "flipLabels" : false,
+              "showGridLines" : true,
+              "size" : [
+                100,
+                100
+              ],
+              "enable" : false,
+              "type" : "x",
+              "chartsPerLine" : 4
+            },
+            "columnMap" : {
+              "split" : [
+                "AnlyTxHack__Industry_Type__c"
+              ],
+              "timeAxis" : [
+                "month_AnlyTxHack__EstimatedClosedDate__c"
+              ],
+              "trellis" : [ ],
+              "plots" : [
+                "count"
+              ]
+            },
+            "fillArea" : true,
+            "showActionMenu" : true,
+            "showZero" : true,
+            "measureAxis2" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "measureAxis1" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "valueType" : "none",
+            "theme" : "wave",
+            "applyConditionalFormatting" : true,
+            "drawArea" : {
+              "measure" : "",
+              "showDrawArea" : false,
+              "bounding1" : "",
+              "bounding2" : ""
+            }
+          },
+          "type" : "chart"
+        }
+      },
+      "month_AnlyTxHack__Es_1" : {
+        "broadcastFacet" : true,
+        "datasets" : [ ],
+        "isGlobal" : false,
+        "label" : "Number of cases each month",
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "count",
+                "*"
+              ]
+            ],
+            "groups" : [
+              [
+                "month",
+                "AnlyTxHack__EstimatedClosedDate__c"
+              ]
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "sobject" : "Case",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "autoFitMode" : "keepLabels",
+            "showValues" : true,
+            "bins" : {
+              "breakpoints" : {
+                "high" : 100,
+                "low" : 0
+              },
+              "bands" : {
+                "high" : {
+                  "color" : "#008000",
+                  "label" : ""
+                },
+                "low" : {
+                  "color" : "#B22222",
+                  "label" : ""
+                },
+                "medium" : {
+                  "color" : "#ffa500",
+                  "label" : ""
+                }
+              }
+            },
+            "legend" : {
+              "descOrder" : false,
+              "showHeader" : true,
+              "show" : true,
+              "customSize" : "auto",
+              "position" : "right-top",
+              "inside" : false
+            },
+            "axisMode" : "multi",
+            "tooltip" : {
+              "showBinLabel" : true,
+              "measures" : "",
+              "showNullValues" : true,
+              "showPercentage" : true,
+              "showDimensions" : true,
+              "showMeasures" : true,
+              "customizeTooltip" : false,
+              "dimensions" : ""
+            },
+            "visualizationType" : "vbar",
+            "title" : {
+              "fontSize" : 16,
+              "subtitleFontSize" : 11,
+              "label" : "Number of Service Cases Each Month",
+              "align" : "center",
+              "subtitleLabel" : ""
+            },
+            "trellis" : {
+              "flipLabels" : false,
+              "showGridLines" : true,
+              "size" : [
+                100,
+                100
+              ],
+              "enable" : false,
+              "type" : "x",
+              "chartsPerLine" : 4
+            },
+            "binValues" : false,
+            "columnMap" : {
+              "trellis" : [ ],
+              "dimensionAxis" : [
+                "month_AnlyTxHack__EstimatedClosedDate__c"
+              ],
+              "plots" : [
+                "count"
+              ]
+            },
+            "showActionMenu" : true,
+            "measureAxis2" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "measureAxis1" : {
+              "sqrtScale" : false,
+              "showTitle" : false,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "theme" : "wave",
+            "dimensionAxis" : {
+              "showTitle" : false,
+              "customSize" : "auto",
+              "showAxis" : true,
+              "title" : "",
+              "icons" : {
+                "useIcons" : false,
+                "iconProps" : {
+                  "fit" : "cover",
+                  "column" : "",
+                  "type" : "round"
+                }
+              }
+            },
+            "applyConditionalFormatting" : true
+          },
+          "type" : "chart"
+        }
+      },
+      "AnlyTxHack__Date_Rep_1" : {
+        "broadcastFacet" : true,
+        "datasets" : [ ],
+        "isGlobal" : false,
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "count",
+                "*"
+              ]
+            ],
+            "groups" : [
+              "AnlyTxHack__Date_Reported__c"
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "sobject" : "AnlyTxHack__Covid19WHOStats__c",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : { }
       },
       "CloseDate_1" : {
         "broadcastFacet" : true,
@@ -811,136 +1247,6 @@
         "type" : "aggregateflex",
         "useGlobal" : true,
         "visualizationParameters" : { }
-      },
-      "month_AnlyTxHack__Da_1" : {
-        "broadcastFacet" : true,
-        "datasets" : [ ],
-        "isGlobal" : false,
-        "query" : {
-          "query" : {
-            "measures" : [
-              [
-                "sum",
-                "AnlyTxHack__New_Cases__c"
-              ]
-            ],
-            "groups" : [
-              [
-                "month",
-                "AnlyTxHack__Date_Reported__c"
-              ]
-            ]
-          },
-          "version" : -1.0
-        },
-        "receiveFacetSource" : {
-          "mode" : "all",
-          "steps" : [ ]
-        },
-        "selectMode" : "single",
-        "sobject" : "AnlyTxHack__Covid19WHOStats__c",
-        "type" : "aggregateflex",
-        "useGlobal" : true,
-        "visualizationParameters" : {
-          "parameters" : {
-            "showValues" : true,
-            "bins" : {
-              "breakpoints" : {
-                "high" : 100,
-                "low" : 0
-              },
-              "bands" : {
-                "high" : {
-                  "color" : "#008000",
-                  "label" : ""
-                },
-                "low" : {
-                  "color" : "#B22222",
-                  "label" : ""
-                },
-                "medium" : {
-                  "color" : "#ffa500",
-                  "label" : ""
-                }
-              }
-            },
-            "legend" : {
-              "descOrder" : false,
-              "showHeader" : true,
-              "show" : true,
-              "customSize" : "auto",
-              "position" : "right-top",
-              "inside" : false
-            },
-            "axisMode" : "multi",
-            "tooltip" : {
-              "showBinLabel" : true,
-              "measures" : "",
-              "showNullValues" : true,
-              "showPercentage" : true,
-              "showDimensions" : true,
-              "showMeasures" : true,
-              "customizeTooltip" : false,
-              "dimensions" : ""
-            },
-            "visualizationType" : "time-bar",
-            "timeAxis" : {
-              "showTitle" : true,
-              "showAxis" : true,
-              "title" : ""
-            },
-            "title" : {
-              "fontSize" : 14,
-              "subtitleFontSize" : 11,
-              "label" : "",
-              "align" : "center",
-              "subtitleLabel" : ""
-            },
-            "trellis" : {
-              "flipLabels" : false,
-              "showGridLines" : true,
-              "size" : [
-                100,
-                100
-              ],
-              "enable" : false,
-              "type" : "x",
-              "chartsPerLine" : 4
-            },
-            "binValues" : false,
-            "columnMap" : {
-              "timeAxis" : [
-                "month_AnlyTxHack__Date_Reported__c"
-              ],
-              "trellis" : [ ],
-              "plots" : [
-                "sum_AnlyTxHack__New_Cases__c"
-              ]
-            },
-            "showActionMenu" : true,
-            "measureAxis2" : {
-              "sqrtScale" : false,
-              "showTitle" : true,
-              "showAxis" : true,
-              "title" : "",
-              "customDomain" : {
-                "showDomain" : false
-              }
-            },
-            "measureAxis1" : {
-              "sqrtScale" : false,
-              "showTitle" : true,
-              "showAxis" : true,
-              "title" : "",
-              "customDomain" : {
-                "showDomain" : false
-              }
-            },
-            "theme" : "wave",
-            "applyConditionalFormatting" : true
-          },
-          "type" : "chart"
-        }
       },
       "AnlyTxHack__New_Case_1" : {
         "broadcastFacet" : true,
@@ -1473,6 +1779,284 @@
           "type" : "chart"
         }
       },
+      "AnlyTxHack__Country__5" : {
+        "broadcastFacet" : true,
+        "datasets" : [ ],
+        "isGlobal" : false,
+        "label" : "AnlyTxHack__Country__5",
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "count",
+                "*"
+              ]
+            ],
+            "groups" : [
+              "AnlyTxHack__Country__c",
+              "AnlyTxHack__Industry_Type__c",
+              "AnlyTxHack__Solved_By__c"
+            ],
+            "order" : [
+              [
+                "count",
+                {
+                  "ascending" : false
+                }
+              ]
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "sobject" : "Case",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "autoFitMode" : "keepLabels",
+            "showValues" : true,
+            "legend" : {
+              "descOrder" : false,
+              "showHeader" : false,
+              "show" : true,
+              "customSize" : "auto",
+              "position" : "top-center",
+              "inside" : false
+            },
+            "axisMode" : "multi",
+            "totalSumMode" : "none",
+            "tooltip" : {
+              "showBinLabel" : true,
+              "measures" : "",
+              "showNullValues" : true,
+              "showPercentage" : true,
+              "showDimensions" : true,
+              "showMeasures" : true,
+              "customizeTooltip" : false,
+              "dimensions" : ""
+            },
+            "visualizationType" : "stackhbar",
+            "title" : {
+              "fontSize" : 24,
+              "subtitleFontSize" : 11,
+              "label" : "Number of Cases Resolved By",
+              "align" : "center",
+              "subtitleLabel" : ""
+            },
+            "trellis" : {
+              "flipLabels" : false,
+              "showGridLines" : true,
+              "size" : [
+                100,
+                100
+              ],
+              "enable" : false,
+              "type" : "x",
+              "chartsPerLine" : 4
+            },
+            "columnMap" : {
+              "split" : [
+                "AnlyTxHack__Solved_By__c"
+              ],
+              "trellis" : [ ],
+              "dimensionAxis" : [
+                "AnlyTxHack__Country__c",
+                "AnlyTxHack__Industry_Type__c"
+              ],
+              "plots" : [
+                "count"
+              ]
+            },
+            "showActionMenu" : true,
+            "measureAxis2" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "measureAxis1" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "normalize" : false,
+            "theme" : "wave",
+            "dimensionAxis" : {
+              "showTitle" : false,
+              "customSize" : "auto",
+              "showAxis" : true,
+              "title" : "",
+              "icons" : {
+                "useIcons" : false,
+                "iconProps" : {
+                  "fit" : "cover",
+                  "column" : "",
+                  "type" : "round"
+                }
+              }
+            },
+            "applyConditionalFormatting" : true
+          },
+          "type" : "chart"
+        }
+      },
+      "AnlyTxHack__Country__6" : {
+        "broadcastFacet" : true,
+        "datasets" : [ ],
+        "isGlobal" : false,
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "count",
+                "*"
+              ]
+            ],
+            "groups" : [
+              "AnlyTxHack__Country__c"
+            ],
+            "order" : [
+              [
+                "count",
+                {
+                  "ascending" : false
+                }
+              ]
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "sobject" : "AnlyTxHack__Covid19WHOStats__c",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "autoFitMode" : "keepLabels",
+            "showValues" : true,
+            "bins" : {
+              "breakpoints" : {
+                "high" : 100,
+                "low" : 0
+              },
+              "bands" : {
+                "high" : {
+                  "color" : "#008000",
+                  "label" : ""
+                },
+                "low" : {
+                  "color" : "#B22222",
+                  "label" : ""
+                },
+                "medium" : {
+                  "color" : "#ffa500",
+                  "label" : ""
+                }
+              }
+            },
+            "legend" : {
+              "descOrder" : false,
+              "showHeader" : true,
+              "show" : true,
+              "customSize" : "auto",
+              "position" : "right-top",
+              "inside" : false
+            },
+            "axisMode" : "multi",
+            "tooltip" : {
+              "showBinLabel" : true,
+              "measures" : "",
+              "showNullValues" : true,
+              "showPercentage" : true,
+              "showDimensions" : true,
+              "showMeasures" : true,
+              "customizeTooltip" : false,
+              "dimensions" : ""
+            },
+            "visualizationType" : "hbar",
+            "title" : {
+              "fontSize" : 14,
+              "subtitleFontSize" : 11,
+              "label" : "",
+              "align" : "center",
+              "subtitleLabel" : ""
+            },
+            "binValues" : false,
+            "trellis" : {
+              "flipLabels" : false,
+              "showGridLines" : true,
+              "size" : [
+                100,
+                100
+              ],
+              "enable" : false,
+              "type" : "x",
+              "chartsPerLine" : 4
+            },
+            "columnMap" : {
+              "trellis" : [ ],
+              "dimensionAxis" : [
+                "AnlyTxHack__Country__c"
+              ],
+              "plots" : [
+                "count"
+              ]
+            },
+            "showActionMenu" : true,
+            "measureAxis2" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "measureAxis1" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "theme" : "wave",
+            "dimensionAxis" : {
+              "showTitle" : true,
+              "customSize" : "auto",
+              "showAxis" : true,
+              "title" : "",
+              "icons" : {
+                "useIcons" : false,
+                "iconProps" : {
+                  "fit" : "cover",
+                  "column" : "",
+                  "type" : "round"
+                }
+              }
+            },
+            "applyConditionalFormatting" : true
+          },
+          "type" : "chart"
+        }
+      },
       "AnlyTxHack__Industry_1" : {
         "broadcastFacet" : true,
         "datasets" : [ ],
@@ -1813,6 +2397,978 @@
           },
           "type" : "chart"
         }
+      },
+      "Priority_Origin_1" : {
+        "broadcastFacet" : true,
+        "datasets" : [ ],
+        "isGlobal" : false,
+        "label" : "Priority_Origin",
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "count",
+                "*"
+              ]
+            ],
+            "groups" : [
+              "Priority",
+              "Origin"
+            ],
+            "order" : [
+              [
+                "count",
+                {
+                  "ascending" : true
+                }
+              ]
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "sobject" : "Case",
+        "start" : [ ],
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "autoFitMode" : "keepLabels",
+            "showValues" : true,
+            "bins" : {
+              "breakpoints" : {
+                "high" : 100,
+                "low" : 0
+              },
+              "bands" : {
+                "high" : {
+                  "color" : "#008000",
+                  "label" : ""
+                },
+                "low" : {
+                  "color" : "#B22222",
+                  "label" : ""
+                },
+                "medium" : {
+                  "color" : "#ffa500",
+                  "label" : ""
+                }
+              }
+            },
+            "legend" : {
+              "descOrder" : false,
+              "showHeader" : true,
+              "show" : true,
+              "customSize" : "auto",
+              "position" : "right-top",
+              "inside" : false
+            },
+            "axisMode" : "multi",
+            "tooltip" : {
+              "showBinLabel" : true,
+              "measures" : "",
+              "showNullValues" : true,
+              "showPercentage" : true,
+              "showDimensions" : true,
+              "showMeasures" : true,
+              "customizeTooltip" : false,
+              "dimensions" : ""
+            },
+            "visualizationType" : "hbar",
+            "title" : {
+              "fontSize" : 14,
+              "subtitleFontSize" : 11,
+              "label" : "",
+              "align" : "center",
+              "subtitleLabel" : ""
+            },
+            "binValues" : false,
+            "trellis" : {
+              "flipLabels" : false,
+              "showGridLines" : true,
+              "size" : [
+                100,
+                100
+              ],
+              "enable" : false,
+              "type" : "x",
+              "chartsPerLine" : 4
+            },
+            "columnMap" : {
+              "trellis" : [ ],
+              "dimensionAxis" : [
+                "Priority",
+                "Origin"
+              ],
+              "plots" : [
+                "count"
+              ]
+            },
+            "showActionMenu" : true,
+            "measureAxis2" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "measureAxis1" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "theme" : "wave",
+            "dimensionAxis" : {
+              "showTitle" : true,
+              "customSize" : "auto",
+              "showAxis" : true,
+              "title" : "",
+              "icons" : {
+                "useIcons" : false,
+                "iconProps" : {
+                  "fit" : "cover",
+                  "column" : "",
+                  "type" : "round"
+                }
+              }
+            },
+            "applyConditionalFormatting" : true
+          },
+          "type" : "chart"
+        }
+      },
+      "Priority_Origin_2" : {
+        "broadcastFacet" : true,
+        "datasets" : [ ],
+        "isGlobal" : false,
+        "label" : "Priority_Origin",
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "count",
+                "*"
+              ]
+            ],
+            "groups" : [
+              [
+                "month",
+                "AnlyTxHack__EstimatedClosedDate__c"
+              ],
+              "Origin"
+            ],
+            "order" : [
+              [
+                "count",
+                {
+                  "ascending" : true
+                }
+              ]
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "sobject" : "Case",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "showPoints" : true,
+            "legend" : {
+              "descOrder" : false,
+              "showHeader" : true,
+              "show" : true,
+              "customSize" : "auto",
+              "position" : "bottom-center",
+              "inside" : false
+            },
+            "axisMode" : "multi",
+            "tooltip" : {
+              "showBinLabel" : true,
+              "measures" : "",
+              "showNullValues" : true,
+              "showPercentage" : true,
+              "showDimensions" : true,
+              "showMeasures" : true,
+              "customizeTooltip" : false,
+              "dimensions" : ""
+            },
+            "visualizationType" : "time",
+            "missingValue" : "connect",
+            "dashLine" : {
+              "measures" : [
+                "count"
+              ],
+              "showDashLine" : true
+            },
+            "timeAxis" : {
+              "showTitle" : false,
+              "showAxis" : true,
+              "title" : ""
+            },
+            "title" : {
+              "fontSize" : 16,
+              "subtitleFontSize" : 11,
+              "label" : "Number of Service Cases Against Origin",
+              "align" : "center",
+              "subtitleLabel" : ""
+            },
+            "trellis" : {
+              "flipLabels" : false,
+              "showGridLines" : true,
+              "size" : [
+                100,
+                100
+              ],
+              "enable" : false,
+              "type" : "x",
+              "chartsPerLine" : 4
+            },
+            "columnMap" : {
+              "split" : [
+                "Origin"
+              ],
+              "timeAxis" : [
+                "month_AnlyTxHack__EstimatedClosedDate__c"
+              ],
+              "trellis" : [ ],
+              "plots" : [
+                "count"
+              ]
+            },
+            "fillArea" : true,
+            "showActionMenu" : true,
+            "showZero" : true,
+            "measureAxis2" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "valueType" : "compactNumber",
+            "measureAxis1" : {
+              "sqrtScale" : false,
+              "showTitle" : false,
+              "showAxis" : true,
+              "referenceLines" : [
+                {
+                  "label" : {
+                    "data" : "Threshold",
+                    "type" : "static"
+                  },
+                  "value" : {
+                    "data" : "50",
+                    "type" : "static"
+                  }
+                }
+              ],
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "theme" : "wave",
+            "applyConditionalFormatting" : true,
+            "drawArea" : {
+              "measure" : "",
+              "showDrawArea" : false,
+              "bounding1" : "",
+              "bounding2" : ""
+            }
+          },
+          "type" : "chart"
+        }
+      },
+      "ExpectedRevenue_1" : {
+        "broadcastFacet" : true,
+        "datasets" : [ ],
+        "isGlobal" : false,
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "sum",
+                "ExpectedRevenue"
+              ]
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "sobject" : "Opportunity",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "autoFitMode" : "keepLabels",
+            "showValues" : true,
+            "bins" : {
+              "breakpoints" : {
+                "high" : 100,
+                "low" : 0
+              },
+              "bands" : {
+                "high" : {
+                  "color" : "#008000",
+                  "label" : ""
+                },
+                "low" : {
+                  "color" : "#B22222",
+                  "label" : ""
+                },
+                "medium" : {
+                  "color" : "#ffa500",
+                  "label" : ""
+                }
+              }
+            },
+            "legend" : {
+              "descOrder" : false,
+              "showHeader" : true,
+              "show" : true,
+              "customSize" : "auto",
+              "position" : "right-top",
+              "inside" : false
+            },
+            "axisMode" : "multi",
+            "tooltip" : {
+              "showBinLabel" : true,
+              "measures" : "",
+              "showNullValues" : true,
+              "showPercentage" : true,
+              "showDimensions" : true,
+              "showMeasures" : true,
+              "customizeTooltip" : false,
+              "dimensions" : ""
+            },
+            "visualizationType" : "hbar",
+            "title" : {
+              "fontSize" : 14,
+              "subtitleFontSize" : 11,
+              "label" : "",
+              "align" : "center",
+              "subtitleLabel" : ""
+            },
+            "binValues" : false,
+            "trellis" : {
+              "flipLabels" : false,
+              "showGridLines" : true,
+              "size" : [
+                100,
+                100
+              ],
+              "enable" : false,
+              "type" : "x",
+              "chartsPerLine" : 4
+            },
+            "columnMap" : {
+              "trellis" : [ ],
+              "dimensionAxis" : [ ],
+              "plots" : [
+                "sum_ExpectedRevenue"
+              ]
+            },
+            "showActionMenu" : true,
+            "measureAxis2" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "measureAxis1" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "theme" : "wave",
+            "dimensionAxis" : {
+              "showTitle" : true,
+              "customSize" : "auto",
+              "showAxis" : true,
+              "title" : "",
+              "icons" : {
+                "useIcons" : false,
+                "iconProps" : {
+                  "fit" : "cover",
+                  "column" : "",
+                  "type" : "round"
+                }
+              }
+            },
+            "applyConditionalFormatting" : true
+          },
+          "type" : "chart"
+        }
+      },
+      "CaseIndusty_1" : {
+        "broadcastFacet" : true,
+        "datasets" : [ ],
+        "isGlobal" : false,
+        "label" : "CaseIndusty",
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "count",
+                "*"
+              ]
+            ],
+            "groups" : [
+              "AnlyTxHack__Industry_Type__c"
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "sobject" : "Case",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "autoFitMode" : "keepLabels",
+            "showValues" : true,
+            "bins" : {
+              "breakpoints" : {
+                "high" : 100,
+                "low" : 0
+              },
+              "bands" : {
+                "high" : {
+                  "color" : "#008000",
+                  "label" : ""
+                },
+                "low" : {
+                  "color" : "#B22222",
+                  "label" : ""
+                },
+                "medium" : {
+                  "color" : "#ffa500",
+                  "label" : ""
+                }
+              }
+            },
+            "legend" : {
+              "descOrder" : false,
+              "showHeader" : true,
+              "show" : true,
+              "customSize" : "auto",
+              "position" : "right-top",
+              "inside" : false
+            },
+            "axisMode" : "multi",
+            "tooltip" : {
+              "showBinLabel" : true,
+              "measures" : "",
+              "showNullValues" : true,
+              "showPercentage" : true,
+              "showDimensions" : true,
+              "showMeasures" : true,
+              "customizeTooltip" : false,
+              "dimensions" : ""
+            },
+            "visualizationType" : "hbar",
+            "title" : {
+              "fontSize" : 14,
+              "subtitleFontSize" : 11,
+              "label" : "",
+              "align" : "center",
+              "subtitleLabel" : ""
+            },
+            "binValues" : false,
+            "trellis" : {
+              "flipLabels" : false,
+              "showGridLines" : true,
+              "size" : [
+                100,
+                100
+              ],
+              "enable" : false,
+              "type" : "x",
+              "chartsPerLine" : 4
+            },
+            "columnMap" : {
+              "trellis" : [ ],
+              "dimensionAxis" : [
+                "AnlyTxHack__Industry_Type__c"
+              ],
+              "plots" : [
+                "count"
+              ]
+            },
+            "showActionMenu" : true,
+            "measureAxis2" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "measureAxis1" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "theme" : "wave",
+            "dimensionAxis" : {
+              "showTitle" : true,
+              "customSize" : "auto",
+              "showAxis" : true,
+              "title" : "",
+              "icons" : {
+                "useIcons" : false,
+                "iconProps" : {
+                  "fit" : "cover",
+                  "column" : "",
+                  "type" : "round"
+                }
+              }
+            },
+            "applyConditionalFormatting" : true
+          },
+          "type" : "chart"
+        }
+      },
+      "month_AnlyTxHack__Da_1" : {
+        "broadcastFacet" : true,
+        "datasets" : [ ],
+        "isGlobal" : false,
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "sum",
+                "AnlyTxHack__New_Cases__c"
+              ]
+            ],
+            "groups" : [
+              [
+                "month",
+                "AnlyTxHack__Date_Reported__c"
+              ]
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "sobject" : "AnlyTxHack__Covid19WHOStats__c",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "showValues" : true,
+            "bins" : {
+              "breakpoints" : {
+                "high" : 100,
+                "low" : 0
+              },
+              "bands" : {
+                "high" : {
+                  "color" : "#008000",
+                  "label" : ""
+                },
+                "low" : {
+                  "color" : "#B22222",
+                  "label" : ""
+                },
+                "medium" : {
+                  "color" : "#ffa500",
+                  "label" : ""
+                }
+              }
+            },
+            "legend" : {
+              "descOrder" : false,
+              "showHeader" : true,
+              "show" : true,
+              "customSize" : "auto",
+              "position" : "right-top",
+              "inside" : false
+            },
+            "axisMode" : "multi",
+            "tooltip" : {
+              "showBinLabel" : true,
+              "measures" : "",
+              "showNullValues" : true,
+              "showPercentage" : true,
+              "showDimensions" : true,
+              "showMeasures" : true,
+              "customizeTooltip" : false,
+              "dimensions" : ""
+            },
+            "visualizationType" : "time-bar",
+            "timeAxis" : {
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : ""
+            },
+            "title" : {
+              "fontSize" : 14,
+              "subtitleFontSize" : 11,
+              "label" : "",
+              "align" : "center",
+              "subtitleLabel" : ""
+            },
+            "trellis" : {
+              "flipLabels" : false,
+              "showGridLines" : true,
+              "size" : [
+                100,
+                100
+              ],
+              "enable" : false,
+              "type" : "x",
+              "chartsPerLine" : 4
+            },
+            "binValues" : false,
+            "columnMap" : {
+              "timeAxis" : [
+                "month_AnlyTxHack__Date_Reported__c"
+              ],
+              "trellis" : [ ],
+              "plots" : [
+                "sum_AnlyTxHack__New_Cases__c"
+              ]
+            },
+            "showActionMenu" : true,
+            "measureAxis2" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "measureAxis1" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "theme" : "wave",
+            "applyConditionalFormatting" : true
+          },
+          "type" : "chart"
+        }
+      },
+      "month_AnlyTxHack__Da_3" : {
+        "broadcastFacet" : true,
+        "datasets" : [ ],
+        "isGlobal" : false,
+        "label" : "month_AnlyTxHack__Da_3",
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "sum",
+                "AnlyTxHack__New_Cases__c"
+              ]
+            ],
+            "groups" : [
+              [
+                "month",
+                "AnlyTxHack__Date_Reported__c"
+              ]
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "sobject" : "AnlyTxHack__Covid19WHOStats__c",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "autoFitMode" : "keepLabels",
+            "showValues" : true,
+            "bins" : {
+              "breakpoints" : {
+                "high" : 100,
+                "low" : 0
+              },
+              "bands" : {
+                "high" : {
+                  "color" : "#008000",
+                  "label" : ""
+                },
+                "low" : {
+                  "color" : "#B22222",
+                  "label" : ""
+                },
+                "medium" : {
+                  "color" : "#ffa500",
+                  "label" : ""
+                }
+              }
+            },
+            "legend" : {
+              "descOrder" : false,
+              "showHeader" : true,
+              "show" : true,
+              "customSize" : "auto",
+              "position" : "right-top",
+              "inside" : false
+            },
+            "axisMode" : "multi",
+            "tooltip" : {
+              "showBinLabel" : true,
+              "measures" : "",
+              "showNullValues" : true,
+              "showPercentage" : true,
+              "showDimensions" : true,
+              "showMeasures" : true,
+              "customizeTooltip" : false,
+              "dimensions" : ""
+            },
+            "visualizationType" : "time-bar",
+            "timeAxis" : {
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : ""
+            },
+            "title" : {
+              "fontSize" : 24,
+              "subtitleFontSize" : 11,
+              "label" : "Covid19 Cases Count Month Wise",
+              "align" : "center",
+              "subtitleLabel" : ""
+            },
+            "trellis" : {
+              "flipLabels" : false,
+              "showGridLines" : true,
+              "size" : [
+                100,
+                100
+              ],
+              "enable" : false,
+              "type" : "x",
+              "chartsPerLine" : 4
+            },
+            "binValues" : false,
+            "columnMap" : {
+              "timeAxis" : [
+                "month_AnlyTxHack__Date_Reported__c"
+              ],
+              "trellis" : [ ],
+              "plots" : [
+                "sum_AnlyTxHack__New_Cases__c"
+              ]
+            },
+            "showActionMenu" : true,
+            "measureAxis2" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "measureAxis1" : {
+              "sqrtScale" : false,
+              "showTitle" : false,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "theme" : "wave",
+            "applyConditionalFormatting" : true
+          },
+          "type" : "chart"
+        }
+      },
+      "month_AnlyTxHack__Da_2" : {
+        "broadcastFacet" : true,
+        "datasets" : [ ],
+        "isGlobal" : false,
+        "label" : "Number of Cases Each Month",
+        "query" : {
+          "query" : {
+            "measures" : [
+              [
+                "count",
+                "*"
+              ]
+            ],
+            "groups" : [
+              [
+                "month",
+                "AnlyTxHack__Date_Reported__c"
+              ]
+            ]
+          },
+          "version" : -1.0
+        },
+        "receiveFacetSource" : {
+          "mode" : "all",
+          "steps" : [ ]
+        },
+        "selectMode" : "single",
+        "sobject" : "AnlyTxHack__Covid19WHOStats__c",
+        "type" : "aggregateflex",
+        "useGlobal" : true,
+        "visualizationParameters" : {
+          "parameters" : {
+            "autoFitMode" : "keepLabels",
+            "showValues" : true,
+            "bins" : {
+              "breakpoints" : {
+                "high" : 100,
+                "low" : 0
+              },
+              "bands" : {
+                "high" : {
+                  "color" : "#008000",
+                  "label" : ""
+                },
+                "low" : {
+                  "color" : "#B22222",
+                  "label" : ""
+                },
+                "medium" : {
+                  "color" : "#ffa500",
+                  "label" : ""
+                }
+              }
+            },
+            "legend" : {
+              "descOrder" : false,
+              "showHeader" : true,
+              "show" : false,
+              "customSize" : "auto",
+              "position" : "right-top",
+              "inside" : false
+            },
+            "axisMode" : "multi",
+            "tooltip" : {
+              "showBinLabel" : true,
+              "measures" : "",
+              "showNullValues" : true,
+              "showPercentage" : true,
+              "showDimensions" : true,
+              "showMeasures" : true,
+              "customizeTooltip" : false,
+              "dimensions" : ""
+            },
+            "visualizationType" : "vbar",
+            "title" : {
+              "fontSize" : 16,
+              "subtitleFontSize" : 11,
+              "label" : "Number of COVID19 Cases Each Month",
+              "align" : "center",
+              "subtitleLabel" : ""
+            },
+            "trellis" : {
+              "flipLabels" : false,
+              "showGridLines" : true,
+              "size" : [
+                100,
+                100
+              ],
+              "enable" : false,
+              "type" : "x",
+              "chartsPerLine" : 4
+            },
+            "binValues" : false,
+            "columnMap" : {
+              "trellis" : [ ],
+              "dimensionAxis" : [
+                "month_AnlyTxHack__Date_Reported__c"
+              ],
+              "plots" : [
+                "count"
+              ]
+            },
+            "showActionMenu" : true,
+            "measureAxis2" : {
+              "sqrtScale" : false,
+              "showTitle" : true,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "measureAxis1" : {
+              "sqrtScale" : false,
+              "showTitle" : false,
+              "showAxis" : true,
+              "title" : "",
+              "customDomain" : {
+                "showDomain" : false
+              }
+            },
+            "theme" : "wave",
+            "dimensionAxis" : {
+              "showTitle" : false,
+              "customSize" : "auto",
+              "showAxis" : true,
+              "title" : "",
+              "icons" : {
+                "useIcons" : false,
+                "iconProps" : {
+                  "fit" : "cover",
+                  "column" : "",
+                  "type" : "round"
+                }
+              }
+            },
+            "applyConditionalFormatting" : true
+          },
+          "type" : "chart"
+        }
       }
     },
     "widgetStyle" : {
@@ -1835,13 +3391,111 @@
         },
         "type" : "image"
       },
-      "pillbox_2" : {
+      "chart_9" : {
+        "parameters" : {
+          "autoFitMode" : "keepLabels",
+          "showValues" : true,
+          "legend" : {
+            "descOrder" : false,
+            "showHeader" : false,
+            "show" : true,
+            "customSize" : "auto",
+            "position" : "top-center",
+            "inside" : false
+          },
+          "axisMode" : "multi",
+          "totalSumMode" : "none",
+          "tooltip" : {
+            "showBinLabel" : true,
+            "measures" : "",
+            "showNullValues" : true,
+            "showPercentage" : true,
+            "showDimensions" : true,
+            "showMeasures" : true,
+            "customizeTooltip" : false,
+            "dimensions" : ""
+          },
+          "visualizationType" : "stackhbar",
+          "exploreLink" : true,
+          "title" : {
+            "fontSize" : 24,
+            "subtitleFontSize" : 11,
+            "label" : "Number of Cases Resolved By",
+            "align" : "center",
+            "subtitleLabel" : ""
+          },
+          "trellis" : {
+            "flipLabels" : false,
+            "showGridLines" : true,
+            "size" : [
+              100,
+              100
+            ],
+            "enable" : false,
+            "type" : "x",
+            "parameters" : { },
+            "chartsPerLine" : 4
+          },
+          "columnMap" : {
+            "split" : [
+              "AnlyTxHack__Solved_By__c"
+            ],
+            "trellis" : [ ],
+            "dimensionAxis" : [
+              "AnlyTxHack__Country__c",
+              "AnlyTxHack__Industry_Type__c"
+            ],
+            "plots" : [
+              "count"
+            ]
+          },
+          "showActionMenu" : true,
+          "measureAxis2" : {
+            "sqrtScale" : false,
+            "showTitle" : true,
+            "showAxis" : true,
+            "title" : "",
+            "customDomain" : {
+              "showDomain" : false
+            }
+          },
+          "measureAxis1" : {
+            "sqrtScale" : false,
+            "showTitle" : true,
+            "showAxis" : true,
+            "title" : "",
+            "customDomain" : {
+              "showDomain" : false
+            }
+          },
+          "normalize" : false,
+          "theme" : "bluegrassDark",
+          "step" : "AnlyTxHack__Country__5",
+          "dimensionAxis" : {
+            "showTitle" : false,
+            "customSize" : "auto",
+            "showAxis" : true,
+            "title" : "",
+            "icons" : {
+              "useIcons" : false,
+              "iconProps" : {
+                "fit" : "cover",
+                "column" : "",
+                "type" : "round",
+                "parameters" : { }
+              }
+            }
+          },
+          "applyConditionalFormatting" : true
+        },
+        "type" : "chart"
+      },
+      "pillbox_1" : {
         "parameters" : {
           "compact" : false,
-          "displayTemplate" : "[AnlyTxHack__Industry_Type__c] - [Origin]",
           "exploreLink" : false,
           "fontSize" : 14,
-          "measureField" : "avg_AnlyTxHack__CSAT__c",
+          "measureField" : "count",
           "selectedTab" : {
             "backgroundColor" : "#0070D2",
             "borderColor" : "#C6D3E1",
@@ -1852,7 +3506,7 @@
             "textColor" : "#FFFFFF"
           },
           "showActionMenu" : true,
-          "step" : "AnlyTxHack__Industry_2",
+          "step" : "CaseIndusty_1",
           "textColor" : "#0070D2"
         },
         "type" : "pillbox"
@@ -1868,6 +3522,27 @@
           }
         },
         "type" : "container"
+      },
+      "pillbox_5" : {
+        "parameters" : {
+          "compact" : false,
+          "exploreLink" : false,
+          "fontSize" : 14,
+          "measureField" : "count",
+          "selectedTab" : {
+            "backgroundColor" : "#0070D2",
+            "borderColor" : "#C6D3E1",
+            "borderEdges" : [
+              "all"
+            ],
+            "borderWidth" : 1,
+            "textColor" : "#FFFFFF"
+          },
+          "showActionMenu" : true,
+          "step" : "CaseCountries_1",
+          "textColor" : "#0070D2"
+        },
+        "type" : "pillbox"
       },
       "navigation_2" : {
         "parameters" : {
@@ -1886,22 +3561,109 @@
         },
         "type" : "navigation"
       },
-      "navigation_1" : {
+      "chart_2" : {
         "parameters" : {
-          "fontSize" : 16,
-          "selectedTab" : {
-            "backgroundColor" : "#FFFFFF",
-            "borderColor" : "#0070D2",
-            "borderEdges" : [
-              "bottom"
-            ],
-            "borderWidth" : 2,
-            "textColor" : "#0070D2"
+          "autoFitMode" : "keepLabels",
+          "showValues" : true,
+          "bins" : {
+            "breakpoints" : {
+              "high" : 100,
+              "low" : 0
+            },
+            "bands" : {
+              "high" : {
+                "color" : "#008000",
+                "label" : ""
+              },
+              "low" : {
+                "color" : "#B22222",
+                "label" : ""
+              },
+              "medium" : {
+                "color" : "#ffa500",
+                "label" : ""
+              }
+            }
           },
-          "tabCount" : 5,
-          "textColor" : "#54698D"
+          "legend" : {
+            "descOrder" : false,
+            "showHeader" : true,
+            "show" : true,
+            "customSize" : "auto",
+            "position" : "right-top",
+            "inside" : false
+          },
+          "axisMode" : "multi",
+          "tooltip" : {
+            "showBinLabel" : true,
+            "measures" : "",
+            "showNullValues" : true,
+            "showPercentage" : true,
+            "showDimensions" : true,
+            "showMeasures" : true,
+            "customizeTooltip" : false,
+            "dimensions" : ""
+          },
+          "visualizationType" : "time-bar",
+          "timeAxis" : {
+            "showTitle" : true,
+            "showAxis" : true,
+            "title" : ""
+          },
+          "exploreLink" : true,
+          "title" : {
+            "fontSize" : 24,
+            "subtitleFontSize" : 11,
+            "label" : "Covid19 Cases Count Month Wise",
+            "align" : "center",
+            "subtitleLabel" : ""
+          },
+          "binValues" : false,
+          "trellis" : {
+            "flipLabels" : false,
+            "showGridLines" : true,
+            "size" : [
+              100,
+              100
+            ],
+            "enable" : false,
+            "type" : "x",
+            "parameters" : { },
+            "chartsPerLine" : 4
+          },
+          "columnMap" : {
+            "timeAxis" : [
+              "month_AnlyTxHack__Date_Reported__c"
+            ],
+            "trellis" : [ ],
+            "plots" : [
+              "sum_AnlyTxHack__New_Cases__c"
+            ]
+          },
+          "showActionMenu" : true,
+          "measureAxis2" : {
+            "sqrtScale" : false,
+            "showTitle" : true,
+            "showAxis" : true,
+            "title" : "",
+            "customDomain" : {
+              "showDomain" : false
+            }
+          },
+          "measureAxis1" : {
+            "sqrtScale" : false,
+            "showTitle" : false,
+            "showAxis" : true,
+            "title" : "",
+            "customDomain" : {
+              "showDomain" : false
+            }
+          },
+          "theme" : "dark",
+          "step" : "month_AnlyTxHack__Da_3",
+          "applyConditionalFormatting" : true
         },
-        "type" : "navigation"
+        "type" : "chart"
       },
       "chart_1" : {
         "parameters" : {
@@ -1933,7 +3695,7 @@
           "showValuesOnLine" : false,
           "exploreLink" : false,
           "title" : {
-            "fontSize" : 16,
+            "fontSize" : 24,
             "subtitleFontSize" : 11,
             "label" : "Number of Cases Against Average CSAT",
             "align" : "center",
@@ -2002,39 +3764,19 @@
         },
         "type" : "chart"
       },
-      "chart_3" : {
+      "chart_4" : {
         "parameters" : {
           "autoFitMode" : "keepLabels",
-          "showValues" : true,
-          "bins" : {
-            "breakpoints" : {
-              "high" : 100,
-              "low" : 0
-            },
-            "bands" : {
-              "high" : {
-                "color" : "#008000",
-                "label" : ""
-              },
-              "low" : {
-                "color" : "#B22222",
-                "label" : ""
-              },
-              "medium" : {
-                "color" : "#ffa500",
-                "label" : ""
-              }
-            }
-          },
+          "showPoints" : false,
           "legend" : {
             "descOrder" : false,
             "showHeader" : false,
-            "show" : false,
+            "show" : true,
             "customSize" : "auto",
             "position" : "bottom-center",
             "inside" : false
           },
-          "axisMode" : "dual",
+          "axisMode" : "multi",
           "tooltip" : {
             "showBinLabel" : true,
             "measures" : "",
@@ -2045,11 +3787,22 @@
             "customizeTooltip" : false,
             "dimensions" : ""
           },
-          "visualizationType" : "vbar",
+          "visualizationType" : "time",
+          "missingValue" : "connect",
+          "dashLine" : {
+            "measures" : "",
+            "showDashLine" : false
+          },
+          "timeAxis" : {
+            "showTitle" : false,
+            "showAxis" : true,
+            "title" : ""
+          },
+          "exploreLink" : true,
           "title" : {
-            "fontSize" : 16,
+            "fontSize" : 24,
             "subtitleFontSize" : 11,
-            "label" : "Origin Against Priority",
+            "label" : "Number of Salesforce Support Cases by Month/Industry",
             "align" : "center",
             "subtitleLabel" : ""
           },
@@ -2060,24 +3813,26 @@
               100,
               100
             ],
-            "enable" : true,
+            "enable" : false,
             "type" : "x",
             "parameters" : { },
             "chartsPerLine" : 4
           },
-          "binValues" : false,
           "columnMap" : {
-            "trellis" : [
-              "Priority"
+            "split" : [
+              "AnlyTxHack__Industry_Type__c"
             ],
-            "dimensionAxis" : [
-              "Origin"
+            "timeAxis" : [
+              "month_AnlyTxHack__EstimatedClosedDate__c"
             ],
+            "trellis" : [ ],
             "plots" : [
               "count"
             ]
           },
+          "fillArea" : true,
           "showActionMenu" : true,
+          "showZero" : true,
           "measureAxis2" : {
             "sqrtScale" : false,
             "showTitle" : true,
@@ -2089,30 +3844,22 @@
           },
           "measureAxis1" : {
             "sqrtScale" : false,
-            "showTitle" : false,
+            "showTitle" : true,
             "showAxis" : true,
             "title" : "",
             "customDomain" : {
               "showDomain" : false
             }
           },
-          "theme" : "sunriseDark",
-          "step" : "Priority_Origin_1",
+          "valueType" : "none",
+          "theme" : "watermelonDark",
+          "step" : "month_AnlyTxHack__Es_2",
           "applyConditionalFormatting" : true,
-          "dimensionAxis" : {
-            "showTitle" : false,
-            "customSize" : "auto",
-            "showAxis" : true,
-            "title" : "",
-            "icons" : {
-              "useIcons" : false,
-              "iconProps" : {
-                "fit" : "cover",
-                "column" : "",
-                "type" : "round",
-                "parameters" : { }
-              }
-            }
+          "drawArea" : {
+            "measure" : "",
+            "showDrawArea" : false,
+            "bounding1" : "",
+            "bounding2" : ""
           }
         },
         "type" : "chart"
