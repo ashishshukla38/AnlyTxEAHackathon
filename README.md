@@ -3,6 +3,17 @@
 This guide helps Salesforce developers who are new to Visual Studio Code go from zero to a deployed app using Salesforce Extensions for VS Code and Salesforce CLI.
 This project was created with the analytics template which is configured to work with Einstein Analytics features.
 
+## Pre-requisite:
+Salesforce CLI should be installed in your system. If not installed, then follow instructions given in the [Set Up Your Workspace and Install Developer Tools](https://trailhead.salesforce.com/content/learn/projects/quickstart-vscode-salesforce/vscode-salesforce-ready?trail_id=set-up-your-workspace-and-install-developer-tools) trailhead.
+
+## How to setup org with this project? 
+1. [Download repo](https://github.com/ashishshukla38/AnlyTxEAHackathon/archive/master.zip) or Clone this repo locally: -- git clone https://github.com/ashishshukla38/AnlyTxEAHackathon.git 
+2. Run init.sh -- ./init.sh - 
+    This shell file will create an scratch org, will install AnlyTx app and open the newly created org in new browser tab.
+//3. Go to Setup->Lightning App Builder->New.
+
+
+
 ## Part 1: Choosing a Development Model
 
 There are two types of developer processes or models supported in Salesforce Extensions for VS Code and Salesforce CLI. These models are explained below. Each model offers pros and cons and is fully supported.
