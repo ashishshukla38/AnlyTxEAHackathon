@@ -13,14 +13,13 @@ sfdx force:apex:execute -f config/setupUsers.apex
 #Install package
 sfdx force:package:install  -s AllUsers -p 04tB0000000cylH -w 20
 
-
 #Create dashboard from template
 sfdx force:apex:execute -f config/setup.apex
 
 # push the contents of this repo into the scratch org
 #sfdx force:source:push
-sfdx force:data:bulk:upsert -s Account -f ./data/Account.csv -i Id -u scratchEATest
-sfdx force:data:bulk:upsert -s opportunity -f ./data/Opportunity.csv -i Id -u scratchEATest
+sfdx force:data:bulk:upsert -s Account -f ./data/Accounts2.csv -i Id -u scratchEATest
+sfdx force:data:bulk:upsert -s opportunity -f ./data/Opportunity2.csv -i Id -u scratchEATest
 sfdx force:data:bulk:upsert -s AnlyTxHack__Covid19WHOStats__c  -f ./data/Covid19WHOData.csv -i Id -u scratchEATest
 sfdx force:data:bulk:upsert -s Case  -f ./data/Case.csv -i Id -u scratchEATest
 sfdx force:apex:execute -f config/dataload.apex
