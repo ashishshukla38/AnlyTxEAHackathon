@@ -1,7 +1,6 @@
 # Salesforce App
 
-This guide helps Salesforce developers who are new to Visual Studio Code go from zero to a deployed app using Salesforce Extensions for VS Code and Salesforce CLI.
-This project was created with the analytics template which is configured to work with Einstein Analytics features.
+This guide helps people to understand how "AnlyTxEaHackathon" package can be setup and enhanced.
 
 ## Pre-requisite:
 1. User should have an Winter'21 Dev-Hub org. [Winter'21 Pre-release org](https://www.salesforce.com/form/signup/prerelease-winter21/)
