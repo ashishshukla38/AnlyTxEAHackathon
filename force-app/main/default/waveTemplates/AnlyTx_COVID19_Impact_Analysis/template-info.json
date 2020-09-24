@@ -17,7 +17,7 @@
     }
   ],
   "releaseInfo" : {
-    "templateVersion" : "1.2",
+    "templateVersion" : "1.3",
     "notesFile" : "releaseNotes.html"
   },
   "folderDefinition" : "folder.json",
@@ -41,6 +41,12 @@
       "name" : "COVID19_Impact_on_Sales_tp",
       "condition" : "${Variables.Overrides.createAllDashboards}",
       "file" : "dashboards/COVID19_Impact_on_Sales.json"
+    },
+    {
+      "label" : "COVID19 - Impact on Services",
+      "name" : "COVID19_Impact_on_Services_tp",
+      "condition" : "${Variables.Overrides.createAllDashboards}",
+      "file" : "dashboards/COVID19_Impact_on_Services.json"
     }
   ],
   "eltDataflows" : [ ],
