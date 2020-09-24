@@ -1,4 +1,4 @@
- echo "Starting Creation of Scratch org."
+#echo "Starting Creation of Scratch org."
 # create scratch org
 sfdx force:org:create -f config/project-scratch-def.json -s -d 7 -w 60 -a scratchEATest
 
