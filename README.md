@@ -114,3 +114,26 @@ sfdx analytics:template:update -f 00l9D000000IFuhQAG  --templatename AnlyTx_COVI
   ]
 }
 ```
+
+## Use Cases: 
+
+# Sales Cloud – Use Case
+Expected Revenue of won opportunities in different sectors by country.
+• Expected Revenue of Salesforce opportunity decreased when opportunity was
+related to Travel or Entertainment industry for a Specific country due to COVID
+and lockdown.
+• E.g. Expected Revenue from Salesforce opportunity increased when opportunity
+was related to Computer Software as due to lockdown more companies needed
+their presence on Digital Platform.
+• Medical Equipment for a specific country due to increase of number of COVID
+Cases.
+
+
+## Service Cloud – Use Case
+This dashboard shows how COVID impacted cases with below use cases:
+• When Industry is Travel the number of Cases generated were less as compare to
+Health Care and Computer software/
+• When Industry is Health Care, the number of cases were more but average CSAT
+score went down due to limited manpower in Call Centre and on site.
+• Due to limited people availability the number of cases solved by Chatbot,
+Knowledge portal and Self resolution increased.
