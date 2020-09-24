@@ -13,6 +13,9 @@ sfdx force:apex:execute -f config/setupUsers.apex
 #Install package
 sfdx force:package:install  -s AllUsers -p 04tB0000000cylH -w 20
 
+#Assign AnlyTx_Permissons to user
+sfdx force:user:permset:assign -n AnlyTxHack__Anlytx_Permissons
+
 #Create dashboard from template
 sfdx force:apex:execute -f config/setup.apex
 
