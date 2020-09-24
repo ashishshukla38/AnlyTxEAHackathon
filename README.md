@@ -4,14 +4,28 @@ This guide helps Salesforce developers who are new to Visual Studio Code go from
 This project was created with the analytics template which is configured to work with Einstein Analytics features.
 
 ## Pre-requisite:
-Salesforce CLI should be installed in your system. If not installed, then follow instructions given in the [Set Up Your Workspace and Install Developer Tools](https://trailhead.salesforce.com/content/learn/projects/quickstart-vscode-salesforce/vscode-salesforce-ready?trail_id=set-up-your-workspace-and-install-developer-tools) trailhead.
+1. Salesforce CLI along with VS Code should be installed in your system. If not installed, then follow instructions given in the [Set Up Your Workspace and Install Developer Tools](https://trailhead.salesforce.com/content/learn/projects/quickstart-vscode-salesforce/vscode-salesforce-ready?trail_id=set-up-your-workspace-and-install-developer-tools) trailhead.
+2. User should have an Winter'21 Dev-Hub org. [Winter'21 Pre-release org](https://www.salesforce.com/form/signup/prerelease-winter21/)
 
 ## How to setup org with this project? 
-1. [Download repo](https://github.com/ashishshukla38/AnlyTxEAHackathon/archive/master.zip) or Clone this repo locally: -- git clone https://github.com/ashishshukla38/AnlyTxEAHackathon.git 
-2. Run init.sh -- ./init.sh - 
-    This shell file will create an scratch org, will install AnlyTx app and open the newly created org in new browser tab.
-//3. Go to Setup->Lightning App Builder->New.
+### Option 1 - For direct installation on EADL enabled org
+1. Open [package link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000cylW) in browser.
+2. Login with the EADL enabled org credentials.
 
+### Option 2 - For installation using VS code on scratch org.
+1. [Download repo](https://github.com/ashishshukla38/AnlyTxEAHackathon/archive/master.zip) or Clone this repo locally: -- git clone https://github.com/ashishshukla38/AnlyTxEAHackathon.git 
+2. Open AnlyTxEAHackathon folder inside VS Code and set the current user as Dev hub user.
+3. Run init.sh -- ./init.sh - 
+    This shell file will create an scratch org, will install AnlyTx app and open the newly created org in new browser tab.
+
+## Post-install steps
+After successfully installing the package, user needs to perform following steps in order to make use of awesome Analytics dashboards.
+1. Go to Setup -> Search and click on  Lightning App Builder menu. 
+2. Click on New button -> Select App page -> Click on Next -> Enter Label for App Page -> Click on Next -> Select One Region from Left side bar -> Click on Finish.
+3. From the left-side drag and drop Einstein Analytics Dashboard to middle component.
+4. Click on the newly added Einstein Dashboard -> Select the appropriate wave dashboard and set the component height and click on Save button and later click on Activate button.
+5. Go to Setup -> Search and click on Tabs -> Click on New button to create New Lightning Page Tab -> On the new screen, select newly created Lightning app page from drop-down and enter appropriate Label, Name and click on Next -> Select the appropriate profiles that needs to have access to the newly created tabs and click on Save button.
+6. Open any app where you want to add the awesome analytics dashboards -> Click on the pencil icon below at top right side -> Click on Addmore items -> Click on All -> Select Newly created tab -> Click on Add Nav Item -> click on Save button.
 
 
 ## Part 1: Choosing a Development Model
