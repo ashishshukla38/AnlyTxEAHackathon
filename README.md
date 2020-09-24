@@ -12,7 +12,7 @@ This guide helps people to understand how "AnlyTxEaHackathon" Einstein Analytics
 ### Option 1(Recommended for testing on scratch org) - For installation using VS code on scratch org.
 1. [Download repo](https://github.com/ashishshukla38/AnlyTxEAHackathon/archive/master.zip) or Clone this repo locally: -- git clone https://github.com/ashishshukla38/AnlyTxEAHackathon.git 
 2. Open AnlyTxEAHackathon folder inside VS Code and set the current user as Dev hub user (Winter 21 pre-release org)
-3. Run init.sh -- ./init.sh - 
+3. Run orgInit.sh -- ./orgInit.sh  
     This shell file will create an scratch org, will install AnlyTx app and open the newly created org in new browser tab.
         
 ### Option 2(Not recommended for testing) - For direct installation on EADL enabled org. Here you may need to perform some manual steps.
