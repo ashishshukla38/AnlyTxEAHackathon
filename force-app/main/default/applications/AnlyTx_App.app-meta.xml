@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <brand>
-        <headerColor>#0070D2</headerColor>          
+        <headerColor>#0070D2</headerColor>
+        <logo>Logo_AnlyTx1</logo>
+        <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
     </brand>
-    <description>App created for AnlyTx App.</description>
+    <description>Application created to demonstrate einstein analytics EADL capabilities.</description>
     <formFactors>Small</formFactors>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>AnlyTx App</label>
-    <navType>Standard</navType>   
-    <uiType>Lightning</uiType>  
+    <navType>Console</navType>
+    <tabs>Sales_Impacts</tabs>
+    <tabs>Service_Impacts</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>AnlyTx_App_UtilityBar</utilityBar>
+    <workspaceConfig>
+        <mappings>
+            <tab>Sales_Impacts</tab>
+        </mappings>
+        <mappings>
+            <tab>Service_Impacts</tab>
+        </mappings>
+    </workspaceConfig>
 </CustomApplication>

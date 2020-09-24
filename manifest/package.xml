@@ -49,6 +49,24 @@
 		<members>*</members>
 		<name>WaveTemplateBundle</name>
 	</types> 
+	<types>
+		<members>*</members>
+		<name>ContentAsset</name>
+	</types>
+	<types>
+		<members>AnlyTx_App</members>
+		<name>CustomApplication</name>
+	</types>
+	<types>
+		<members>Case.EstimatedClosedDate__c</members>
+		<members>Case.Industry_Type__c</members>
+		<members>Opportunity.Industry_Type__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>*</members>
+		<name>FlexiPage</name>
+	</types>
     <!--<types>		 
 		<members>Covid19WHOStats__c</members>
 		<name>CustomObject</name>

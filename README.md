@@ -76,7 +76,8 @@ sfdx analytics:template:update -f 00l9D000000IFuhQAG  --templatename AnlyTx_COVI
 ```json
 "templateType": "embeddedapp",
 ```
-4. Add, if it is removed after package update.
+4. Add, if it is removed after package update. Please add next to "templateType": "embeddedapp",
+
 ```json
 "autoInstallDefinition": "auto-install.json",
 ```
@@ -101,3 +102,19 @@ sfdx analytics:template:update -f 00l9D000000IFuhQAG  --templatename AnlyTx_COVI
   }
 }
  ```
+
+ 6. Update folder.json file 's shares attribute as below:
+```json
+{
+  "name": "demoTemplate",
+  "label": "demoTemplate",
+  "description": "Analytics template with one simple dashboard",
+  "featuredAssets": {},
+  "shares": [
+    {
+      "accessType": "View",
+      "shareType": "Organization"
+    }
+  ]
+}
+```

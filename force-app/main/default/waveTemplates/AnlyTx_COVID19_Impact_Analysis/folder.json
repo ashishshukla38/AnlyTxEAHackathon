@@ -3,5 +3,10 @@
   "label" : "AnlyTx - COVID19 Impact Analysis",
   "description" : null,
   "featuredAssets" : { },
-  "shares" : [ ]
+  "shares": [
+    {
+      "accessType": "View",
+      "shareType": "Organization"
+    }
+  ]
 }
