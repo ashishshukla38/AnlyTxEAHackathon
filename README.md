@@ -1,6 +1,6 @@
 # Salesforce App
 
-This guide helps people to understand how "AnlyTxEaHackathon" package can be setup and enhanced.
+This guide helps people to understand how "AnlyTxEaHackathon" Einstein Analytics package/template can be setup and enhanced.
 
 ## Pre-requisite:
 1. User should have an Winter'21 Dev-Hub org. [Winter'21 Pre-release org](https://www.salesforce.com/form/signup/prerelease-winter21/)
