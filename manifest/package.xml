@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-	<types>
+ 	<types>
 		<members>Account.Account_External_Id__c</members>
 		<members>Case.Account_External_Id__c</members>
 		<members>Case.CSAT__c</members>
@@ -24,12 +24,12 @@
 		<members>Opportunity.Opportunity_Source__c</members>
 		<members>Opportunity.Region__c</members>
 		<name>CustomField</name>
-	</types>	
+	</types> 
 	 <types>
 		<members>Anlytx_Permissons</members>
 		<name>PermissionSet</name>
 	</types>	  
-	<!--<types>
+    <!--<types>
 		<members>*</members>
 		<name>WaveApplication</name>
 	</types>
@@ -52,6 +52,6 @@
     <types>		 
 		<members>Covid19WHOStats__c</members>
 		<name>CustomObject</name>
-	</types>-->
+	</types> 
 	<version>50.0</version>
 </Package>
