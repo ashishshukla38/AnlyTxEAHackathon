@@ -202,6 +202,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Covid19WHOStats__c.AnlyTxHack__Date_Reported__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Covid19WHOStats__c.Date_Reported__c</field>
         <readable>false</readable>
