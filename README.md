@@ -29,7 +29,7 @@ After successfully installing the package, user needs to perform following steps
 4. Click on the newly added Einstein Dashboard -> Select the appropriate wave dashboard and set the component height and click on Save button and later click on Activate button.
 5. Go to Setup -> Search and click on Tabs -> Click on New button to create New Lightning Page Tab -> On the new screen, select newly created Lightning app page from drop-down and enter appropriate Label, Name and click on Next -> Select the appropriate profiles that needs to have access to the newly created tabs and click on Save button.
 6. Open any app where you want to add the awesome analytics dashboards -> Click on the pencil icon below at top right side -> Click on Add more items -> Click on All -> Select Newly created tab -> Click on Add Nav Item -> click on Save button.
-
+  ![alt text](https://github.com/ashishshukla38/AnlyTxEAHackathon/blob/master/ReadMdImages/UpdateTemplateScreenshot.png) 
 
 ## Developer specific guidelines: 
 
@@ -50,6 +50,7 @@ To udpate the template with new changes use below process:
 1. Execute Command:
 sfdx analytics:app:list
  
+
  ![alt text](https://github.com/ashishshukla38/AnlyTxEAHackathon/blob/master/ReadMdImages/UpdateTemplateScreenshot.png?raw=true) 
 
 
