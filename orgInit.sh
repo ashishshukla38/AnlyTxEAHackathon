@@ -1,31 +1,53 @@
-#echo "Starting Creation of Scratch org."
+echo "__________________________________"
+echo "Starting Creation of Scratch org."
+echo "__________________________________"
 # create scratch org
-sfdx force:org:create -f config/project-scratch-def.json -s -d 7 -w 60 -a scratchEATest
+sfdx force:org:create -f config/project-scratch-def.json -s -d 7 -w 60 -a scratchEATest2
 
+echo "__________________________________"
+echo "Assigning Analytics View Only Permission Set."
+echo "__________________________________"
 #Assign Analytics view only permset to user
 sfdx force:user:permset:assign -n AnalyticsViewOnlyUser
 
+echo "__________________________________"
+echo "Creating Additional Standard User."
+echo "__________________________________"
 #Setup some extra users
 #Doing this prior to installing package so that this user can also have access to that package
 sfdx force:apex:execute -f config/setupUsers.apex
 
-#Sample: https://github.com/skipsauls/eadx
+echo "__________________________________"
+echo "Installing anlyTx package."
+echo "__________________________________"
 #Install package
 sfdx force:package:install  -s AllUsers -p 04tB0000000cylH -w 20
 
+echo "__________________________________"
+echo "Assigning Analytics Package Permission Set."
+echo "__________________________________"
 #Assign AnlyTx_Permissons to user
 sfdx force:user:permset:assign -n AnlyTxHack__Anlytx_Permissons
 
+echo "__________________________________"
+echo "Reseting Password For Scratch Org."
+echo "__________________________________"
 #Create dashboard from template
 sfdx force:apex:execute -f config/setup.apex
 
-# push the contents of this repo into the scratch org
-#sfdx force:source:push
-sfdx force:data:bulk:upsert -s Account -f ./data/Accounts2.csv -i Id -u scratchEATest
-sfdx force:data:bulk:upsert -s opportunity -f ./data/Opportunity2.csv -i Id -u scratchEATest
-sfdx force:data:bulk:upsert -s AnlyTxHack__Covid19WHOStats__c  -f ./data/Covid19WHOData.csv -i Id -u scratchEATest
-sfdx force:data:bulk:upsert -s Case  -f ./data/Case.csv -i Id -u scratchEATest
+echo "__________________________________"
+echo "Uploading Test Data."
+echo "__________________________________"
+# Upload test data to scratch org.
+sfdx force:data:bulk:upsert -s Account -f ./data/Accounts2.csv -i Id -u scratchEATest2
+sfdx force:data:bulk:upsert -s opportunity -f ./data/Opportunity2.csv -i Id -u scratchEATest2
+sfdx force:data:bulk:upsert -s AnlyTxHack__Covid19WHOStats__c  -f ./data/Covid19WHOData.csv -i Id -u scratchEATest2
+sfdx force:data:bulk:upsert -s Case  -f ./data/Case.csv -i Id -u scratchEATest2
 sfdx force:apex:execute -f config/dataload.apex
+
+echo "__________________________________"
+echo "Opening Scratch Org."
+echo "__________________________________"
 #open the org
 sfdx force:org:open
  echo "Press any key to exit the script"
@@ -34,7 +56,7 @@ sfdx force:org:open
   if [ $? = 0 ] ; then
   exit ;
   else
-  echo "waiting for the keypress"
+  echo "Waiting for the keypress"
   fi
   done
 
