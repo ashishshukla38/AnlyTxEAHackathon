@@ -5,15 +5,16 @@ This guide helps people to understand how "AnlyTxEaHackathon" Einstein Analytics
 ## Pre-requisite:
 1. User should have an Winter'21 Dev-Hub org. [Winter'21 Pre-release org](https://www.salesforce.com/form/signup/prerelease-winter21/)
 2. If the user is going with below Option 1, then the Salesforce CLI along with VS Code should be installed in your system. If not installed, then follow instructions given in the [Set Up Your Workspace and Install Developer Tools](https://trailhead.salesforce.com/content/learn/projects/quickstart-vscode-salesforce/vscode-salesforce-ready?trail_id=set-up-your-workspace-and-install-developer-tools) trailhead.
+3. DevHub org generted from Winter21 pre-relese. If you don't have this generate it from here https://www.salesforce.com/form/signup/prerelease-winter21/
 
 ## How to setup org with this project? 
 
 ### Option 1(Recommended for testing on scratch org) - For installation using VS code on scratch org.
 1. [Download repo](https://github.com/ashishshukla38/AnlyTxEAHackathon/archive/master.zip) or Clone this repo locally: -- git clone https://github.com/ashishshukla38/AnlyTxEAHackathon.git 
-2. Open AnlyTxEAHackathon folder inside VS Code and set the current user as Dev hub user.
+2. Open AnlyTxEAHackathon folder inside VS Code and set the current user as Dev hub user (Winter 21 pre-release org)
 3. Run init.sh -- ./init.sh - 
     This shell file will create an scratch org, will install AnlyTx app and open the newly created org in new browser tab.
-    
+        
 ### Option 2(Not recommended for testing) - For direct installation on EADL enabled org. Here you may need to perform some manual steps.
 1. Open [package link](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000cylW) in browser.
 2. Login with the EADL enabled org credentials.
