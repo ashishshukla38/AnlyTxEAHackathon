@@ -1,4 +1,4 @@
-# Salesforce App
+# Setting up the AnlyTx - Einstein Analytics App
 
 This guide helps people to understand how "AnlyTxEaHackathon" Einstein Analytics package/template can be setup and enhanced.
 
