@@ -34,21 +34,24 @@ After successfully installing the package, user needs to perform following steps
 ## Developer specific guidelines: 
 
 1. Init.sh file - will perform the following operations in the background: 
-    1.It will create the scratch org. 
+
+        1. It will create the scratch org. 
     
-    2.Assign the Analytics view only permission set to the user. 
+        2. Assign the Analytics view only permission set to the user. 
     
-    3.Create a standard user with Analytics view only Permission set prior to installing the package so that the newly created user will also have access to the package. 
+        3. Create a standard user with Analytics view only Permission set prior to installing the package so that the newly created user will also have access to the package. 
     
-    4.Install the package. 
+        4. Install the package. 
     
-    5.Create dashboard from template. 
+        5. Create dashboard from template. 
     
-    6.Open the newly created org in the browser. 
+        6. Open the newly created org in the browser. 
     
-    7.Generate sample 1000 records of Account, Contact and Opportunities. 
+        7.Generate sample 1000 records of Account, Contact and Opportunities. 
     
 2.Data folder – Data folder will contain the CSV data of Account, Case, Opportunity and Covid19. 
+To get latest data for Covid use below URL:
+https://covid19.who.int/WHO-COVID-19-global-data.csv
 
 # Process to update the Template with Latest Changes(For developers)
 
