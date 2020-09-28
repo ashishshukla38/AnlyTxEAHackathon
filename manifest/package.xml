@@ -45,10 +45,10 @@
 		<members>*</members>
 		<name>WaveDataset</name>
 	</types>-->
-	<types>
+	<!--<types>
 		<members>*</members>
 		<name>WaveTemplateBundle</name>
-	</types> 
+	</types> -->
 	<!--<types>
 		<members>*</members>
 		<name>ContentAsset</name>
@@ -57,12 +57,12 @@
 		<members>AnlyTx_App</members>
 		<name>CustomApplication</name>
 	</types>-->
-	<types>
+	<!--<types>
 		<members>Case.EstimatedClosedDate__c</members>
 		<members>Case.Industry_Type__c</members>
 		<members>Opportunity.Industry_Type__c</members>
 		<name>CustomField</name>
-	</types>
+	</types>-->
 	<!--<types>
 		<members>*</members>
 		<name>FlexiPage</name>
@@ -88,5 +88,22 @@
 		<members>Covid19WHOStats__c</members>
 		<name>CustomObject</name>
 	</types> -->
+	<types>
+		<members>*</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>Manager</members>
+		<members>ManagerApp</members>
+		<name>AuraDefinitionBundle</name>
+	</types>
+	<types>
+		<members>*</members>
+		<name>CustomTab</name>
+	</types>
+	<types>
+		<members>AnlyTx_Dashboards</members>
+		<name>CustomApplication</name>
+	</types>
 	<version>50.0</version>
 </Package>

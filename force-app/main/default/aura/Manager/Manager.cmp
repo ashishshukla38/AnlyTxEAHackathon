@@ -1,0 +1,41 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="ManagerController">
+    
+    <aura:attribute name="templateApiName" type="String" access="GLOBAL" description="The namespace and developer name." default="AnlyTxHack__AnlyTx_COVID19_Impact_Analysis"/>
+    <aura:attribute name="appName" type="String" access="GLOBAL" description="The name for the app instance." default="AnlyTxHack__AnlyTx_COVID19_Impact_Analysis"/>
+    <aura:attribute name="status" type="Object" access="GLOBAL" description="The request status object."/>
+    <aura:attribute name="timeout" type="Integer" access="global" default="500"/>
+    <aura:attribute name="timer" type="Object"/>
+    <aura:attribute name="dashboards" type="Object[]" access="GLOBAL" description="The dashboards for the embedded app."/>
+    <aura:attribute name="selectedDashboard" type="Object" access="GLOBAL" description="The dashboard to preview."/>
+	<aura:attribute name="height" type="Integer" access="global" default="3000"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <wave:sdk aura:id="sdk"/>  
+    <lightning:layout class="">
+        <lightning:layoutItem flexibility="auto" size="12">   
+            <lightning:tabset>
+            <aura:if isTrue="{!v.dashboards != null}">              
+                    <aura:iteration items="{!v.dashboards}" var="dashboard" indexVar="idx"> 
+                         <lightning:tab label="{!dashboard.label}"  onactive="{!c.handleTestDashboard}" id="{!idx}">
+                            <lightning:tile   href="" class="slds-box slds-m-bottom_small">                                
+                                   <lightning:layoutItem flexibility="auto" size="12">                                        
+                                            <div class="slds-m-around_x-small slds-box slds-theme_default slds-p-around_x-small">
+                                                <wave:waveDashboard dashboardId="{!dashboard.id}"
+                                                                    height="{!v.height}"
+                                                                    openLinksInNewWindow="true"
+                                                                    showHeader="false"
+                                                                    showTitle="false"
+                                                                    showSharing="false"
+                                                                    />        	
+                                            </div>                                                   
+                                    </lightning:layoutItem>
+                            </lightning:tile>    
+                        </lightning:tab>
+                </aura:iteration>                                  
+            </aura:if>  
+            </lightning:tabset>
+        </lightning:layoutItem> 
+    </lightning:layout>
+    
+</aura:component>
