@@ -2,7 +2,7 @@ echo "__________________________________"
 echo "Starting Creation of Scratch org."
 echo "__________________________________"
 # create scratch org
-sfdx force:org:create -f config/project-scratch-def.json -s -d 7 -w 60 -a scratchEATest2
+sfdx force:org:create -f config/project-scratch-def.json -s -d 30 -w 60 -a scratchEATest2
 
 echo "__________________________________"
 echo "Assigning Analytics View Only Permission Set."
