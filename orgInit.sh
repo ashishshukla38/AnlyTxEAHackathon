@@ -21,7 +21,7 @@ echo "__________________________________"
 echo "Installing anlyTx package."
 echo "__________________________________"
 #Install package
-sfdx force:package:install  -s AllUsers -p 04tB0000000cylH -w 20
+sfdx force:package:install  -s AllUsers -p 04tB0000000cylb -w 20
 
 echo "__________________________________"
 echo "Assigning Analytics Package Permission Set."
