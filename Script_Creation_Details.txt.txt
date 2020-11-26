@@ -1,0 +1,223 @@
+__________________________________
+Starting Creation of Scratch org.
+__________________________________
+WARNING: Warning: If you're using Contacts to Multiple Accounts, beginning with the Spring ΓÇÖ21 release, the feature isn't automatically enabled. You must manually enable the setting for new scratch orgs. Enable the setting in one of these ways: update the Account Settings page in Setup, add the enableRelateContactsToMultipleAccounts setting to your scratch org definition file, or enable it via Metadata API.
+Successfully created scratch org: 00DN0000000FrHXMA0, username: test-qykg1zhr8jov@example.com
+__________________________________
+Assigning Analytics View Only Permission Set.
+__________________________________
+=== Permsets Assigned
+USERNAME                       PERMISSION SET ASSIGNMENT
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ  ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+test-qykg1zhr8jov@example.com  AnalyticsViewOnlyUser
+__________________________________
+Creating Additional Standard User.
+__________________________________
+Compiled successfully.
+Executed successfully.
+
+50.0 APEX_CODE,DEBUG;APEX_PROFILING,INFO
+Execute Anonymous: //Create a standard user
+Execute Anonymous: Profile p = [select Id from Profile where Name='Standard User'];
+Execute Anonymous:
+Execute Anonymous: String orgId = UserInfo.getOrganizationId();
+Execute Anonymous: String dateString =  String.valueof(Datetime.now()).replace(' ','').replace(':','').replace('-','');
+Execute Anonymous: Integer randomInt = Integer.valueOf(math.rint(math.random()*1000000));
+Execute Anonymous: String uniqueName = orgId + dateString + randomInt;
+Execute Anonymous:
+Execute Anonymous: //Doing it through apex because it must be unique
+Execute Anonymous: User u = new user();
+Execute Anonymous: u.LastName = 'User';
+Execute Anonymous: u.FirstName = 'Standard';
+Execute Anonymous: u.Email = uniqueName + '@test' + orgId + '.org';
+Execute Anonymous: u.Alias = 'Tstan';
+Execute Anonymous: u.Username = uniqueName + '@test' + orgId + '.org';
+Execute Anonymous: u.CommunityNickname = 'test12';
+Execute Anonymous: u.LocaleSidKey = 'en_US';
+Execute Anonymous: u.TimeZoneSidKey = 'GMT';
+Execute Anonymous: u.ProfileID = p.Id;
+Execute Anonymous: u.LanguageLocaleKey = 'en_US';
+Execute Anonymous: u.EmailEncodingKey = 'UTF-8';
+Execute Anonymous: insert u;
+Execute Anonymous:
+Execute Anonymous:
+Execute Anonymous: //Assign Analytics View Only User Permission Set
+Execute Anonymous: PermissionSet ps = [select Id from PermissionSet where Label='Analytics View Only User'];
+Execute Anonymous: PermissionSetAssignment psa = new PermissionSetAssignment (PermissionSetId = ps.Id, AssigneeId = u.Id);
+Execute Anonymous: insert psa;
+03:29:43.51 (51585681)|USER_INFO|[EXTERNAL]|005N0000009O8M0|test-qykg1zhr8jov@example.com|(GMT-08:00) Pacific Standard Time (America/Los_Angeles)|GMT-08:00
+03:29:43.51 (51651432)|EXECUTION_STARTED
+03:29:43.51 (51660119)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+03:29:44.48 (1048165268)|CUMULATIVE_LIMIT_USAGE
+03:29:44.48 (1048165268)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 2 out of 100
+  Number of query rows: 2 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 2 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 2 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+03:29:44.48 (1048165268)|CUMULATIVE_LIMIT_USAGE_END
+
+03:29:43.51 (1048235724)|CODE_UNIT_FINISHED|execute_anonymous_apex
+03:29:43.51 (1048257289)|EXECUTION_FINISHED
+
+__________________________________
+Installing anlyTx package.
+__________________________________
+Waiting for the package install request to complete. Status = IN_PROGRESS
+Waiting for the package install request to complete. Status = IN_PROGRESS
+Waiting for the package install request to complete. Status = IN_PROGRESS
+Waiting for the package install request to complete. Status = IN_PROGRESS
+Waiting for the package install request to complete. Status = IN_PROGRESS
+Waiting for the package install request to complete. Status = IN_PROGRESS
+Waiting for the package install request to complete. Status = IN_PROGRESS
+Waiting for the package install request to complete. Status = IN_PROGRESS
+Waiting for the package install request to complete. Status = IN_PROGRESS
+Waiting for the package install request to complete. Status = IN_PROGRESS
+Successfully installed package [04tB0000000cyz7]
+__________________________________
+Assigning Analytics Package Permission Set.
+__________________________________
+=== Permsets Assigned
+USERNAME                       PERMISSION SET ASSIGNMENT
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ  ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+test-qykg1zhr8jov@example.com  AnlyTxHack__Anlytx_Permissons
+__________________________________
+Reseting Password For Scratch Org.
+__________________________________
+Compiled successfully.
+Executed successfully.
+
+50.0 APEX_CODE,DEBUG;APEX_PROFILING,INFO
+Execute Anonymous: //Reset the default admin user password because Scratch orgs don't supply password to be able to login directly
+Execute Anonymous: User u = [select id,name, LastName, FirstName, username, ProfileId,  alias, email, TimeZoneSidKey, LanguageLocaleKey, EmailEncodingKey, LocaleSidKey
+Execute Anonymous:           from User where IsActive=true and Profile.Name='System Administrator' limit 1];
+Execute Anonymous:
+Execute Anonymous: System.resetPassword (u.Id, true);
+03:32:14.17 (17315542)|USER_INFO|[EXTERNAL]|005N0000009O8M0|test-qykg1zhr8jov@example.com|(GMT-08:00) Pacific Standard Time (America/Los_Angeles)|GMT-08:00
+03:32:14.17 (17339154)|EXECUTION_STARTED
+03:32:14.17 (17343684)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+03:32:14.156 (156939272)|CUMULATIVE_LIMIT_USAGE
+03:32:14.156 (156939272)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+03:32:14.156 (156939272)|CUMULATIVE_LIMIT_USAGE_END
+
+03:32:14.17 (156981868)|CODE_UNIT_FINISHED|execute_anonymous_apex
+03:32:14.17 (157012587)|EXECUTION_FINISHED
+
+__________________________________
+Uploading Test Data.
+__________________________________
+Bulk Upsert... done
+Check batch #1ΓÇÖs status with the command:
+sfdx force:data:bulk:status -i 750N000000AIpsIIAT -b 751N0000007fuobIAA
+Bulk Upsert... done
+Check batch #1ΓÇÖs status with the command:
+sfdx force:data:bulk:status -i 750N000000AIpv9IAD -b 751N0000007fuogIAA
+Bulk Upsert... done
+Check batch #5ΓÇÖs status with the command:
+sfdx force:data:bulk:status -i 750N000000AIpuIIAT -b 751N0000007fuolIAA
+Check batch #8ΓÇÖs status with the command:
+sfdx force:data:bulk:status -i 750N000000AIpuIIAT -b 751N0000007fuoqIAA
+Check batch #1ΓÇÖs status with the command:
+sfdx force:data:bulk:status -i 750N000000AIpuIIAT -b 751N0000007fuovIAA
+Check batch #7ΓÇÖs status with the command:
+sfdx force:data:bulk:status -i 750N000000AIpuIIAT -b 751N0000007fup0IAA
+Check batch #4ΓÇÖs status with the command:
+sfdx force:data:bulk:status -i 750N000000AIpuIIAT -b 751N0000007fup5IAA
+Check batch #3ΓÇÖs status with the command:
+sfdx force:data:bulk:status -i 750N000000AIpuIIAT -b 751N0000007fupAIAQ
+Check batch #2ΓÇÖs status with the command:
+sfdx force:data:bulk:status -i 750N000000AIpuIIAT -b 751N0000007fupFIAQ
+Check batch #6ΓÇÖs status with the command:
+sfdx force:data:bulk:status -i 750N000000AIpuIIAT -b 751N0000007fupKIAQ
+Bulk Upsert... done
+Check batch #1ΓÇÖs status with the command:
+sfdx force:data:bulk:status -i 750N000000AIpwWIAT -b 751N0000007fupPIAQ
+Compiled successfully.
+Executed successfully.
+
+50.0 APEX_CODE,DEBUG;APEX_PROFILING,INFO
+Execute Anonymous: Map<id,Id> mapAccount =  new map<id,id>();
+Execute Anonymous: for(Account acc:[SELECT id, AnlyTxHack__Account_External_Id__c from account ])
+Execute Anonymous: {
+Execute Anonymous:     mapAccount.put(acc.AnlyTxHack__Account_External_Id__c,acc.id);
+Execute Anonymous: }
+Execute Anonymous:
+Execute Anonymous: // If Opportunity + case records exceed 10K DML rows, then run two commands sepertely.
+Execute Anonymous: // Map Opportunities with the Account by External Id
+Execute Anonymous: List<opportunity> lstOpportunity = [SELECT id, AnlyTxHack__ExternalAccountId__c, Accountid from Opportunity ];
+Execute Anonymous: for(opportunity opp: lstOpportunity)
+Execute Anonymous: {
+Execute Anonymous:     if(opp.AnlyTxHack__ExternalAccountId__c != null && mapAccount.containsKey(opp.AnlyTxHack__ExternalAccountId__c))
+Execute Anonymous:     opp.AccountId = mapAccount.get(opp.AnlyTxHack__ExternalAccountId__c);
+Execute Anonymous: }
+Execute Anonymous: Update lstOpportunity;
+Execute Anonymous:
+Execute Anonymous: // Map Cases with the Account by External Id
+Execute Anonymous: List<Case> lstCases = [SELECT AnlyTxHack__Account_External_Id__c, AccountId FROM Case];
+Execute Anonymous: for(Case caseToIterate: lstCases)
+Execute Anonymous: {
+Execute Anonymous:     if(caseToIterate.AnlyTxHack__Account_External_Id__c != null && mapAccount.ContainsKey(caseToIterate.AnlyTxHack__Account_External_Id__c))
+Execute Anonymous:     {
+Execute Anonymous:         caseToIterate.AccountId = mapAccount.get(caseToIterate.AnlyTxHack__Account_External_Id__c);
+Execute Anonymous:     }
+Execute Anonymous: }
+Execute Anonymous: UPDATE lstCases;
+03:34:13.36 (36920551)|USER_INFO|[EXTERNAL]|005N0000009O8M0|test-qykg1zhr8jov@example.com|(GMT-08:00) Pacific Standard Time (America/Los_Angeles)|GMT-08:00
+03:34:13.36 (36963452)|EXECUTION_STARTED
+03:34:13.36 (36973251)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+03:34:23.834 (10834866812)|CODE_UNIT_STARTED|[EXTERNAL]|Workflow:Case
+03:34:23.834 (10835531426)|CODE_UNIT_FINISHED|Workflow:Case
+03:34:25.6 (12006532255)|CODE_UNIT_STARTED|[EXTERNAL]|Workflow:Case
+03:34:25.6 (12006594258)|CODE_UNIT_FINISHED|Workflow:Case
+03:34:26.99 (13099254097)|CODE_UNIT_STARTED|[EXTERNAL]|Workflow:Case
+03:34:26.99 (13099317238)|CODE_UNIT_FINISHED|Workflow:Case
+03:34:27.201 (14201886977)|CUMULATIVE_LIMIT_USAGE
+03:34:27.201 (14201886977)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 3 out of 100
+  Number of query rows: 3551 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 2 out of 150
+  Number of Publish Immediate DML: 0 out of 150
+  Number of DML rows: 2550 out of 10000
+  Maximum CPU time: 3694 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+03:34:27.201 (14201886977)|CUMULATIVE_LIMIT_USAGE_END
+
+03:34:27.201 (14201969397)|CODE_UNIT_FINISHED|execute_anonymous_apex
+03:34:27.201 (14202013625)|EXECUTION_FINISHED
+
+__________________________________
+Opening Scratch Org.
+__________________________________
+Access org 00DN0000000FrHXMA0 as user test-qykg1zhr8jov@example.com with the following URL: https://enterprise-data-10132-dev-ed.cs6.my.salesforce.com/secur/frontdoor.jsp?sid=00DN0000000FrHX!AQgAQH8O_rzoRPbGAuekNXMtI8XfUbwXYkSKMQrVFUqbTnF5na4MNKjOKwOufg1Ci3_y8iJcVU9uMEkthMXn3nJI.oOJr6Ea
+Press any key to exit the script
+Waiting for the keypress
