@@ -2,7 +2,7 @@ echo "__________________________________"
 echo "Starting Creation of Scratch org."
 echo "__________________________________"
 # create scratch org
-sfdx force:org:create -f config/project-scratch-def.json -s -d 30 -w 60 -a scratchEATest2
+sfdx force:org:create -f config/project-scratch-def.json -s -d 30 -w 60 -a AnlyTxDemoOldData
 
 echo "__________________________________"
 echo "Assigning Analytics View Only Permission Set."
@@ -39,10 +39,11 @@ echo "__________________________________"
 echo "Uploading Test Data."
 echo "__________________________________"
 # Upload test data to scratch org.
-sfdx force:data:bulk:upsert -s Account -f ./data/Accounts2.csv -i Id -u scratchEATest2
-sfdx force:data:bulk:upsert -s opportunity -f ./data/Opportunity2.csv -i Id -u scratchEATest2
-sfdx force:data:bulk:upsert -s AnlyTxHack__Covid19WHOStats__c  -f ./data/Covid19WHOData.csv -i Id -u scratchEATest2
-sfdx force:data:bulk:upsert -s Case  -f ./data/Case.csv -i Id -u scratchEATest2
+sfdx force:data:bulk:upsert -s Account -f ./data/Accounts2.csv -i Id -u AnlyTxDemoOldData
+sfdx force:data:bulk:upsert -s opportunity -f ./data/Opportunity2.csv -i Id -u AnlyTxDemoOldData
+#sfdx force:data:bulk:upsert -s AnlyTxHack__Covid19WHOStats__c  -f ./data/Covid19WHOData.csv -i Id -u AnlyTxDemoOldData  
+sfdx force:data:bulk:upsert -s AnlyTxHack__Covid19WHOStats__c  -f ./data/Covid19WHOData-Updated.csv -i Id -u AnlyTxDemoOldData
+sfdx force:data:bulk:upsert -s Case  -f ./data/Case.csv -i Id -u AnlyTxDemoOldData
 sfdx force:apex:execute -f config/dataload.apex
 
 echo "__________________________________"
